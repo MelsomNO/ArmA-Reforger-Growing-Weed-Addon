@@ -1,0 +1,65 @@
+GenericEntity {
+ ID "6A5AB6990002B003"
+ components {
+  MeshObject "6A5AB6990002B004" {
+   Object "{E652E8AEDEA67EF3}Assets/Props/Cannabis/Cannabis_bucket.xob"
+   LODFactors {
+    5 2 1.5 1 1 1
+   }
+  }
+  RigidBody "6A5AB6990002B005" {
+   ResponseIndex "TinyDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  ActionsManagerComponent "6A5AB6990002B006" {
+   ActionContexts {
+    UserActionContext "6A5AB6990002B007" {
+     UIInfo UIInfo "6A5AB6990002B008" {
+      Name "Harvest"
+     }
+     ContextName "Harvest"
+     Position PointInfo "6A5AB6990002B009" {
+      Offset 0 0.9 0
+     }
+    }
+   }
+   additionalActions {
+    GW_HarvestAction "6A5AB6990002B00A" {
+     ParentContextList {
+      "Harvest"
+     }
+     UIInfo UIInfo "6A5AB6990002B00B" {
+      Name "Harvest Plant"
+     }
+     Duration 1.5
+     m_sHarvestPrefab "{6A5AF1436F910600}Prefabs/Modded/Items/GW_CannabisTop.et"
+     m_iYield 3
+     m_sReplantPrefab "{8289DBAA61AF2EB9}Prefabs/Props/GW_Stage1_Seedling.et"
+    }
+    GW_RemovePlantAction "6A5AB6990002B00F" {
+     ParentContextList {
+      "Harvest"
+     }
+     UIInfo UIInfo "6A5AB6990002B010" {
+      Name "Uproot Plant"
+     }
+     Duration 3
+     m_iShovelAnimMode 2
+    }
+   }
+  }
+  RplComponent "6A5AB6990002B00C" {
+  }
+  Hierarchy "6A5AB6990002B00D" {
+  }
+  SCR_EditableEntityComponent "6A5AB6990002B00E" {
+   m_sDisplayName "GW Stage 3 - Ready to Harvest"
+  }
+  EPF_PersistenceComponent "6A5AF1436F910530" {
+   m_pSaveData EPF_ItemSaveDataClass "6A5AF1436F910531" {
+   }
+  }
+ }
+ Flags 0x403 0
+}

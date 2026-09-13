@@ -1,0 +1,101 @@
+GenericEntity {
+ ID "6A5AB69900030001"
+ components {
+  InventoryItemComponent "6A5AB69900030002" {
+   Attributes SCR_ItemAttributeCollection "6A5AB69900030003" {
+    ItemDisplayName UIInfo "6A5AB69900030004" {
+     Name "Empty Plant Pot"
+     Description "Set it down and plant with a shovel to grow cannabis."
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "6A5AB69900030005" {
+     Weight 2
+     SizeSetupStrategy Manual
+     ItemDimensions 25 25 25
+     ItemVolume 3500
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "6A5AB69900030030" {
+      CameraOrbitAngles 20 -20 0
+      CameraDistanceToItem 1.5
+      FOV 25
+      AspectRatio 1
+     }
+    }
+    m_Size SLOT_2x2
+    m_SlotType SLOT_LOADOUT_STORAGE
+   }
+  }
+  MeshObject "6A5AB69900030006" {
+   Object "{0D762E40253728B3}Assets/Props/Cannabis/Bucket.xob"
+   LODFactors {
+    5 2 1.5 1 1 1
+   }
+  }
+  RigidBody "6A5AB69900030007" {
+   SimState None
+   ModelGeometry 1
+  }
+  SCR_SoundDataComponent "6A5AB69900030008" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "6A5AB69900030009" {
+     m_sSoundProject "{12A94705DF2BFD25}Sounds/Items/_SharedData/PickUp/Items_PickUp_Generic.acp"
+     m_sSoundEventName "SOUND_PICK_UP"
+    }
+    SCR_AudioSourceConfiguration "6A5AB6990003000A" {
+     m_sSoundProject "{CC0E5A1324E761C1}Sounds/Items/_SharedData/Drop/Items_Drop_Generic.acp"
+     m_sSoundEventName "SOUND_DROP"
+    }
+   }
+  }
+  ActionsManagerComponent "6A5AB6990003000B" {
+   ActionContexts {
+    UserActionContext "6A5AB6990003000C" {
+     UIInfo UIInfo "6A5AB6990003000D" {
+      Name "Pot"
+     }
+     ContextName "default"
+     Position PointInfo "6A5AB6990003000E" {
+      Offset 0 0.15 0
+     }
+     Radius 0.35
+    }
+   }
+   additionalActions {
+    SCR_PickUpItemAction "6A5AB6990003000F" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "6A5AB69900030010" {
+      Name "#AR-Inventory_PickUp"
+     }
+    }
+    GW_PlantAction "6A5AB69900030011" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "6A5AB69900030012" {
+      Name "Plant with Shovel"
+     }
+     Duration 5
+     m_sSeedlingPrefab "{8289DBAA61AF2EB9}Prefabs/Props/GW_Stage1_Seedling.et"
+    }
+   }
+  }
+  RplComponent "6A5AB69900030013" {
+  }
+  Hierarchy "6A5AB69900030014" {
+  }
+  SCR_EditableEntityComponent "6A5AB69900030015" {
+   m_sDisplayName "Empty Plant Pot"
+  }
+  EPF_PersistenceComponent "6A5AF1436F910500" {
+   m_bStorageRoot 0
+   m_pSaveData EPF_ItemSaveDataClass "6A5AF1436F910501" {
+    m_aComponents {
+     EPF_BaseInventoryStorageComponentSaveDataClass "6A5AF1436F910502" {
+     }
+    }
+   }
+  }
+ }
+}

@@ -2,3 +2,5 @@
 *.log
 *.tmp
 Backup/
+addon.gproj
+resourceDatabase.rdb
