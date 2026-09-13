@@ -1,0 +1,14 @@
+GenericEntity : "{ECAF61C1001C7C3A}Prefabs/Props/Cannabis/cannabis-top.et" {
+ ID "6A5AF14300030001"
+ components {
+  EPF_PersistenceComponent "6A5AF14300030002" {
+   m_bStorageRoot 0
+   m_pSaveData EPF_ItemSaveDataClass "6A5AF14300030003" {
+    m_aComponents {
+     EPF_BaseInventoryStorageComponentSaveDataClass "6A5AF14300030004" {
+     }
+    }
+   }
+  }
+ }
+}

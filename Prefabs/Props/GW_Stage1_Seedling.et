@@ -1,0 +1,66 @@
+GenericEntity {
+ ID "6A5AB6990000000A"
+ components {
+  MeshObject "6A5AB6990000000B" {
+   Object "{0D762E40253728B3}Assets/Props/Cannabis/Bucket.xob"
+   LODFactors {
+    5 2 1.5 1 1 1
+   }
+  }
+  RigidBody "6A5AB6990000000C" {
+   ResponseIndex "TinyDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  GW_GrowthComponent "6A5AB6990000000D" {
+   m_fGrowInGameHours 6
+   m_sNextStagePrefab "{8EA5B16349B2D3A7}Prefabs/Props/GW_Stage2_Growing.et"
+  }
+  ActionsManagerComponent "6A5AB69900000011" {
+   ActionContexts {
+    UserActionContext "6A5AB69900000012" {
+     UIInfo UIInfo "6A5AB69900000013" {
+      Name "Check Growth"
+     }
+     ContextName "Check Growth"
+     Position PointInfo "6A5AB69900000014" {
+      Offset 0 0.5 0
+     }
+    }
+   }
+   additionalActions {
+    GW_CheckProgressAction "6A5AB69900000015" {
+     ParentContextList {
+      "Check Growth"
+     }
+     UIInfo UIInfo "6A5AB69900000016" {
+      Name "Check Growth"
+     }
+     Duration 0.5
+    }
+    GW_RemovePlantAction "6A5AB69900000017" {
+     ParentContextList {
+      "Check Growth"
+     }
+     UIInfo UIInfo "6A5AB69900000018" {
+      Name "Uproot Plant"
+     }
+     Duration 3
+     m_iShovelAnimMode 2
+    }
+   }
+  }
+  RplComponent "6A5AB6990000000E" {
+  }
+  Hierarchy "6A5AB6990000000F" {
+  }
+  SCR_EditableEntityComponent "6A5AB69900000010" {
+   m_sDisplayName "GW Stage 1 - Seedling"
+  }
+  EPF_PersistenceComponent "6A5AF1436F910510" {
+   m_pSaveData EPF_ItemSaveDataClass "6A5AF1436F910511" {
+   }
+  }
+ }
+ Flags 0x403 0
+}
