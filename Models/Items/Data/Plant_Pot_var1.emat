@@ -1,0 +1,4 @@
+MatPBRBasic {
+ BCRMap "{441628672C3F156C}Textures/Items/PotClay_co.edds"
+ NMOMap "{CB20428A6415AA94}Textures/Items/PotClay_nohq.edds"
+}

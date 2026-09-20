@@ -1,0 +1,32 @@
+GenericEntity : "{D511F5C330B1697E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_USSR_01_Base.et" {
+ ID "264B9A4EB61D17BA"
+ components {
+  InventoryItemComponent "{3DC9C0C2BA98B60D}" {
+   Attributes SCR_ItemAttributeCollection "{F80629CE247E1B5F}" {
+    ItemDisplayName SCR_InventoryUIInfo "{FB0C8A96B8021349}" {
+     Name "Indica Seeds"
+     Description "A pack of Cannabis Indica Seeds."
+     Icon "{7A1040483D584A94}Textures/Item icons/weed_seeds.edds"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{6A693A6652F208C4}" {
+     Weight 0.005
+     SizeSetupStrategy Volume
+     ItemVolume 1
+    }
+    CommonItemType "NONE"
+    m_Size SLOT_1x1
+   }
+  }
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 0.005
+     ItemVolume 1
+    }
+   }
+  }
+  SCR_ConsumableItemComponent "{0C848DFD96929E7A}" {
+   m_bCanBeHeld 0
+  }
+ }
+}
