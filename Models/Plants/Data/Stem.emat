@@ -1,0 +1,7 @@
+MatPBRBasic {
+ Color 0.111 0.133 0.072 1
+ RoughnessScale 0.85
+ BCRMap "{41A552434D49972B}Textures/Plants/BabyLeaf_co.edds"
+ OpacityMap "{D215787DA8C57FFF}Textures/Plants/BabyLeaf_ca.edds"
+ NMOMap "{BC582D119E1DC5D6}Textures/Plants/BabyLeaf_nohq.edds"
+}

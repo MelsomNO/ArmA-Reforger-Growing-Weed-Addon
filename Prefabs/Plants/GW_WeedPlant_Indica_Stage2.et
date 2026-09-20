@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "32F3A889B4BC23FD"
+ components {
+  RplComponent "{42C942C5E88BC733}" {
+  }
+  MeshObject "{F681FFDA3A702558}" {
+   Object "{F6DADF75EC8975AB}Models/Plants/Vegetation2Indica.xob"
+  }
+  GW_GrowthComponent "{0BDED876AFDF45D5}" {
+   m_fGrowInGameHours 8.0
+   m_rNextStagePrefab "{4DBB2CDBA9E56751}Prefabs/Plants/GW_WeedPlant_Indica_Stage3.et"
+   m_bDebugLogs 1
+  }
+ }
+}

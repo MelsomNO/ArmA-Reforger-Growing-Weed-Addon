@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "B7B2B07791AC7E23"
+ components {
+  RplComponent "{8C306734C7CA2B8D}" {
+  }
+  MeshObject "{8F34AD018DD89313}" {
+   Object "{A67131FB1DA4C465}Models/Plants/Stage1Sativa.xob"
+  }
+  GW_GrowthComponent "{BB9878C418D45997}" {
+   m_fGrowInGameHours 6.0
+   m_rNextStagePrefab "{489A116076AB5CED}Prefabs/Plants/GW_WeedPlant_Sativa_Stage2.et"
+   m_bDebugLogs 1
+  }
+ }
+}

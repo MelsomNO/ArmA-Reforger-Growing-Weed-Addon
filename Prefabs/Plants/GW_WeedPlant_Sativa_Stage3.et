@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "F77133C380496DD6"
+ components {
+  RplComponent "{E5939C2A9CEE9F11}" {
+  }
+  MeshObject "{FC25C0AA1163A5F2}" {
+   Object "{DA1FFE40C9F359AA}Models/Plants/FloweringSativa.xob"
+  }
+  GW_GrowthComponent "{2D0FCCFC768724EB}" {
+   m_fGrowInGameHours 0.0
+   m_rNextStagePrefab ""
+   m_bDebugLogs 1
+  }
+ }
+}

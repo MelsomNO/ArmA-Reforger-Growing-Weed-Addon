@@ -3,7 +3,7 @@ GameProject {
  GUID "6A5AB6991AF3656D"
  TITLE "Growing Weed"
  Dependencies {
-  "65F658C80F83E459" "58D0FB3206B6F859"
+  "58D0FB3206B6F859"
  }
  Configurations {
   GameProjectConfig PC {

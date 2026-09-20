@@ -1,0 +1,6 @@
+MatPBRBasic {
+ AlphaTest 1
+ BCRMap "{299C33736EFC4BF8}Textures/Plants/Weed_co.edds"
+ OpacityMap "{BA2C194D8B70A32C}Textures/Plants/Weed_ca.edds"
+ NMOMap "{014F49971F0073D8}Textures/Plants/Weed_nohq.edds"
+}

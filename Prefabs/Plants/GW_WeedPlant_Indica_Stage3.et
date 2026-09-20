@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "70CACF306CA052FC"
+ components {
+  RplComponent "{512F5DB2A9F2DFCC}" {
+  }
+  MeshObject "{28AB77BEF3820AD4}" {
+   Object "{4711CA045D97EAF1}Models/Plants/FloweringIndica.xob"
+  }
+  GW_GrowthComponent "{AB82C87595D21089}" {
+   m_fGrowInGameHours 0.0
+   m_rNextStagePrefab ""
+   m_bDebugLogs 1
+  }
+ }
+}

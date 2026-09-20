@@ -1,0 +1,18 @@
+GenericEntity : "{38A61F701850C3D9}Prefabs/Plants/GW_WeedPlant_Indica_Stage2.et" {
+ coords 2518.26 147.783 2307.736
+}
+GenericEntity : "{4673B6D9CFD85841}Prefabs/Plants/GW_WeedPlant_Sativa_Stage1.et" {
+ coords 2514.101 147.837 2305.693
+}
+GenericEntity : "{489A116076AB5CED}Prefabs/Plants/GW_WeedPlant_Sativa_Stage2.et" {
+ coords 2517.853 147.718 2303.835
+}
+GenericEntity : "{4DBB2CDBA9E56751}Prefabs/Plants/GW_WeedPlant_Indica_Stage3.et" {
+ coords 2515.438 147.863 2307.793
+}
+GenericEntity : "{890AE00D20728B22}Prefabs/Plants/GW_WeedPlant_Sativa_Stage3.et" {
+ coords 2516.211 147.699 2302.241
+}
+GenericEntity : "{BE9A56E00CD35FA2}Prefabs/Plants/GW_WeedPlant_Indica_Stage1.et" {
+ coords 2515.593 147.794 2304.386
+}
