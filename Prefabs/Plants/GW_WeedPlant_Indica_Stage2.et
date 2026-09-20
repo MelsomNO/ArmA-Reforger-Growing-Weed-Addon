@@ -11,5 +11,37 @@ GenericEntity {
    m_rNextStagePrefab "{4DBB2CDBA9E56751}Prefabs/Plants/GW_WeedPlant_Indica_Stage3.et"
    m_bDebugLogs 1
   }
+  ActionsManagerComponent "{776FE34F60FE0872}" {
+   ActionContexts {
+    UserActionContext "{2393ACE551D32E0E}" {
+     UIInfo SCR_ActionUIInfo "{A940638A9FA2615C}" {
+      Name "Cannabis Plant"
+     }
+     ContextName "CheckContext"
+     Position PointInfo "{D5F4A416F746A665}" {
+     }
+    }
+   }
+   additionalActions {
+    GW_CheckGrowthAction "{7E48D555677B7363}" {
+     ParentContextList {
+      "CheckContext"
+     }
+     UIInfo SCR_ActionUIInfo "{03ECCE038F0DFFAA}" {
+      Name "Check Growth"
+     }
+    }
+    GW_UprootAction "{3D94060E5881894A}" {
+     m_iAnimMode 2
+     Duration 3.0
+     ParentContextList {
+      "CheckContext"
+     }
+     UIInfo SCR_ActionUIInfo "{11DEFD197B123FA0}" {
+      Name "Uproot Plant"
+     }
+    }
+   }
+  }
  }
 }

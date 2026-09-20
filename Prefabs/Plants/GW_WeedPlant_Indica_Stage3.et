@@ -11,5 +11,46 @@ GenericEntity {
    m_rNextStagePrefab ""
    m_bDebugLogs 1
   }
+  ActionsManagerComponent "{7E877F81CA520D05}" {
+   ActionContexts {
+    UserActionContext "{724E6F2016819D04}" {
+     UIInfo SCR_ActionUIInfo "{598A5F43FF14DAC0}" {
+      Name "Cannabis Plant"
+     }
+     ContextName "CheckContext"
+     Position PointInfo "{BF6B66E81615BBAF}" {
+     }
+    }
+   }
+   additionalActions {
+    GW_CheckGrowthAction "{2A616BDD500F5B50}" {
+     ParentContextList {
+      "CheckContext"
+     }
+     UIInfo SCR_ActionUIInfo "{4E00B955B6C244EF}" {
+      Name "Check Growth"
+     }
+    }
+    GW_UprootAction "{2F18C2C8ED7CFA7E}" {
+     m_iAnimMode 2
+     Duration 3.0
+     ParentContextList {
+      "CheckContext"
+     }
+     UIInfo SCR_ActionUIInfo "{1530F02D9BE08B91}" {
+      Name "Uproot Plant"
+     }
+    }
+    GW_HarvestAction "{672B89F1B52FF536}" {
+     Duration 2.0
+     ParentContextList {
+      "CheckContext"
+     }
+     UIInfo SCR_ActionUIInfo "{A700FD78C5AEB667}" {
+      Name "Harvest Cannabis"
+     }
+    }
+   }
+  }
  }
 }
