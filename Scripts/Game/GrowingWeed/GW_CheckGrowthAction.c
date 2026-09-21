@@ -5,6 +5,11 @@ class GW_CheckGrowthAction : ScriptedUserAction
 		return GetGrowthComponent(GetOwner()) != null;
 	}
 
+	override bool HasLocalEffectOnlyScript()
+	{
+		return true;
+	}
+
 	override void PerformAction(IEntity pOwnerEntity, IEntity pUserEntity)
 	{
 		GW_GrowthComponent gc = GetGrowthComponent(pOwnerEntity);
