@@ -1,15 +1,19 @@
 GenericEntity {
  ID "32F3A889B4BC23FD"
  components {
-  RplComponent "{42C942C5E88BC733}" {
+  GW_GrowthComponent "{0BDED876AFDF45D5}" {
+   m_fGrowInGameHours 8
+   m_rNextStagePrefab "{4DBB2CDBA9E56751}Prefabs/Plants/GW_WeedPlant_Indica_Stage3.et"
+   m_bDebugLogs 0
   }
   MeshObject "{F681FFDA3A702558}" {
    Object "{F6DADF75EC8975AB}Models/Plants/Vegetation2Indica.xob"
   }
-  GW_GrowthComponent "{0BDED876AFDF45D5}" {
-   m_fGrowInGameHours 8.0
-   m_rNextStagePrefab "{4DBB2CDBA9E56751}Prefabs/Plants/GW_WeedPlant_Indica_Stage3.et"
-   m_bDebugLogs 1
+  SCR_EditableEntityComponent "{F8FD6C5CD84665CE}" {
+   m_UIInfo SCR_UIInfo "{8CF04C8692CF6E68}" {
+    Name "Cannabis Plant (Indica, Vegetative)"
+    Description "An Indica cannabis plant in the vegetative growth stage."
+   }
   }
   ActionsManagerComponent "{776FE34F60FE0872}" {
    ActionContexts {
@@ -30,25 +34,22 @@ GenericEntity {
      UIInfo SCR_ActionUIInfo "{03ECCE038F0DFFAA}" {
       Name ""
      }
+     "Sort Priority" 1
     }
     GW_UprootAction "{3D94060E5881894A}" {
-     m_iAnimMode 2
-     Duration 3.0
      ParentContextList {
       "CheckContext"
      }
      UIInfo SCR_ActionUIInfo "{11DEFD197B123FA0}" {
       Name "Uproot Plant"
      }
+     Duration 3
+     m_iAnimMode 2
      m_rReplacementPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
     }
    }
   }
-  SCR_EditableEntityComponent "{F8FD6C5CD84665CE}" {
-   m_UIInfo SCR_UIInfo "{8CF04C8692CF6E68}" {
-    Name "Cannabis Plant (Indica, Vegetative)"
-    Description "An Indica cannabis plant in the vegetative growth stage."
-   }
+  RplComponent "{42C942C5E88BC733}" {
   }
  }
 }

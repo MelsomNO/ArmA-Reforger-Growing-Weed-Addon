@@ -1,15 +1,19 @@
 GenericEntity {
  ID "F77133C380496DD6"
  components {
-  RplComponent "{E5939C2A9CEE9F11}" {
+  GW_GrowthComponent "{2D0FCCFC768724EB}" {
+   m_fGrowInGameHours 0
+   m_rNextStagePrefab ""
+   m_bDebugLogs 0
   }
   MeshObject "{FC25C0AA1163A5F2}" {
    Object "{DA1FFE40C9F359AA}Models/Plants/FloweringSativa.xob"
   }
-  GW_GrowthComponent "{2D0FCCFC768724EB}" {
-   m_fGrowInGameHours 0.0
-   m_rNextStagePrefab ""
-   m_bDebugLogs 1
+  SCR_EditableEntityComponent "{B088709BD68BD850}" {
+   m_UIInfo SCR_UIInfo "{7072E65B92A657A6}" {
+    Name "Cannabis Plant (Sativa, Mature)"
+    Description "A mature Sativa cannabis plant, ready to harvest."
+   }
   }
   ActionsManagerComponent "{63AC28D6B1D3EE0D}" {
    ActionContexts {
@@ -30,36 +34,34 @@ GenericEntity {
      UIInfo SCR_ActionUIInfo "{CF04C6B0A45CB37E}" {
       Name ""
      }
+     "Sort Priority" 1
     }
     GW_UprootAction "{0DFB9BAD25150E68}" {
-     m_iAnimMode 2
-     Duration 3.0
      ParentContextList {
       "CheckContext"
      }
      UIInfo SCR_ActionUIInfo "{7F3A6B5764F52928}" {
       Name "Uproot Plant"
      }
+     Duration 3
+     "Sort Priority" 2
+     m_iAnimMode 2
      m_rReplacementPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
     }
     GW_HarvestAction "{5244D52C963AF69A}" {
-     m_rYieldPrefab "{93FC2ED987828363}Prefabs/Items/GW_CannabisTop_Sativa.et"
-     m_rReplacementPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
-     Duration 2.0
      ParentContextList {
       "CheckContext"
      }
      UIInfo SCR_ActionUIInfo "{EF2D00AAB7D95605}" {
       Name "Harvest Cannabis"
      }
+     Duration 2
+     m_rYieldPrefab "{93FC2ED987828363}Prefabs/Items/GW_CannabisTop_Sativa.et"
+     m_rReplacementPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
     }
    }
   }
-  SCR_EditableEntityComponent "{B088709BD68BD850}" {
-   m_UIInfo SCR_UIInfo "{7072E65B92A657A6}" {
-    Name "Cannabis Plant (Sativa, Mature)"
-    Description "A mature Sativa cannabis plant, ready to harvest."
-   }
+  RplComponent "{E5939C2A9CEE9F11}" {
   }
  }
 }

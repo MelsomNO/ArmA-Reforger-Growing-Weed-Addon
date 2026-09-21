@@ -4,10 +4,16 @@ GenericEntity {
   GW_GrowthComponent "{E9DF3B5C06DAF917}" {
    m_fGrowInGameHours 6
    m_rNextStagePrefab "{38A61F701850C3D9}Prefabs/Plants/GW_WeedPlant_Indica_Stage2.et"
-   m_bDebugLogs 1
+   m_bDebugLogs 0
   }
   MeshObject "{2CB4E70134F7630B}" {
    Object "{3B7F05BF89C0773E}Models/Plants/Stage1Indica.xob"
+  }
+  SCR_EditableEntityComponent "{B3521BC31C33D4A2}" {
+   m_UIInfo SCR_UIInfo "{A83409D3335BFA5E}" {
+    Name "Cannabis Seedling (Indica)"
+    Description "A newly planted Indica seedling."
+   }
   }
   ActionsManagerComponent "{8E2194F1A9E011B5}" {
    ActionContexts {
@@ -28,6 +34,7 @@ GenericEntity {
      UIInfo SCR_ActionUIInfo "{E3C395EDE80FF767}" {
       Name ""
      }
+     "Sort Priority" 1
     }
     GW_UprootAction "{4A154B09A8AD7FC4}" {
      ParentContextList {
@@ -43,12 +50,6 @@ GenericEntity {
    }
   }
   RplComponent "{2D25D1F381B4790A}" {
-  }
-  SCR_EditableEntityComponent "{B3521BC31C33D4A2}" {
-   m_UIInfo SCR_UIInfo "{A83409D3335BFA5E}" {
-    Name "Cannabis Seedling (Indica)"
-    Description "A newly planted Indica seedling."
-   }
   }
  }
 }

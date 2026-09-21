@@ -1,15 +1,19 @@
 GenericEntity {
  ID "70CACF306CA052FC"
  components {
-  RplComponent "{512F5DB2A9F2DFCC}" {
+  GW_GrowthComponent "{AB82C87595D21089}" {
+   m_fGrowInGameHours 0
+   m_rNextStagePrefab ""
+   m_bDebugLogs 0
   }
   MeshObject "{28AB77BEF3820AD4}" {
    Object "{4711CA045D97EAF1}Models/Plants/FloweringIndica.xob"
   }
-  GW_GrowthComponent "{AB82C87595D21089}" {
-   m_fGrowInGameHours 0.0
-   m_rNextStagePrefab ""
-   m_bDebugLogs 1
+  SCR_EditableEntityComponent "{ADA52C049D46EDFD}" {
+   m_UIInfo SCR_UIInfo "{F98C4C3D7D61CFA9}" {
+    Name "Cannabis Plant (Indica, Mature)"
+    Description "A mature Indica cannabis plant, ready to harvest."
+   }
   }
   ActionsManagerComponent "{7E877F81CA520D05}" {
    ActionContexts {
@@ -30,36 +34,33 @@ GenericEntity {
      UIInfo SCR_ActionUIInfo "{4E00B955B6C244EF}" {
       Name ""
      }
+     "Sort Priority" 1
     }
     GW_UprootAction "{2F18C2C8ED7CFA7E}" {
-     m_iAnimMode 2
-     Duration 3.0
      ParentContextList {
       "CheckContext"
      }
      UIInfo SCR_ActionUIInfo "{1530F02D9BE08B91}" {
       Name "Uproot Plant"
      }
+     Duration 3
+     m_iAnimMode 2
      m_rReplacementPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
     }
     GW_HarvestAction "{672B89F1B52FF536}" {
-     m_rYieldPrefab "{850B60FDE623798B}Prefabs/Items/GW_CannabisTop_Indica.et"
-     m_rReplacementPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
-     Duration 2.0
      ParentContextList {
       "CheckContext"
      }
      UIInfo SCR_ActionUIInfo "{A700FD78C5AEB667}" {
       Name "Harvest Cannabis"
      }
+     Duration 2
+     m_rYieldPrefab "{850B60FDE623798B}Prefabs/Items/GW_CannabisTop_Indica.et"
+     m_rReplacementPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
     }
    }
   }
-  SCR_EditableEntityComponent "{ADA52C049D46EDFD}" {
-   m_UIInfo SCR_UIInfo "{F98C4C3D7D61CFA9}" {
-    Name "Cannabis Plant (Indica, Mature)"
-    Description "A mature Indica cannabis plant, ready to harvest."
-   }
+  RplComponent "{512F5DB2A9F2DFCC}" {
   }
  }
 }
