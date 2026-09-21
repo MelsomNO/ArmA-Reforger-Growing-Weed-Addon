@@ -11,10 +11,11 @@ A self-contained cannabis growing system for Arma Reforger. Plant seeds, tend th
 - **Uproot with shovel** — Any stage can be removed with the shovel demolition animation; the plant is destroyed.
 - **Shovel-gated actions** — Filling the pot and planting seeds require an entrenching-tool-type item in hands (default patterns match the vanilla US ETool and Soviet MPL50). Configurable per prefab if you use a shovel mod with different naming.
 - **Bud visuals on mature plants** — Stage 3 plants have 14 scattered buds hanging from branches, visually distinct from the vegetative stage so players can tell at a glance when a plant is ready.
+- **Available in every arsenal** — Empty pots, both seed packs, and both cannabis top items are pre-wired into the USSR, US, FIA, and CIV faction entity catalogs, so players can pull them from any vanilla arsenal without extra setup.
 
 ## How to play
 
-1. Spawn or pick up an **Empty Plant Pot** (via Game Master).
+1. Pick up an **Empty Plant Pot** from any arsenal (or spawn one via Game Master).
 2. Drop the pot on the ground, equip a shovel, and use **Fill with Dirt** — pot becomes a filled planter.
 3. Have **Sativa Seeds** or **Indica Seeds** in your inventory. With a shovel still in hands, use **Plant Sativa Seed** / **Plant Indica Seed** on the filled pot — one seed is consumed, a seedling appears.
 4. Check progress at any time with **Check Growth**.

@@ -1,6 +1,6 @@
 $grp GenericEntity : "{0D934946BE982287}Prefabs/Items/GW_SeedsIndica.et" {
  {
-  coords 2510.262 148.612 2261.067
+  coords 2510.262 148.604 2261.067
  }
  {
   coords 2510.27 148.612 2260.741
@@ -25,6 +25,9 @@ $grp GenericEntity : "{0D934946BE982287}Prefabs/Items/GW_SeedsIndica.et" {
  }
  {
   coords 2510.928 148.612 2260.429
+ }
+ {
+  coords 2510.206 148.612 2261.059
  }
 }
 $grp GenericEntity : "{72FF76B6070C3F65}Prefabs/Items/GW_SeedsSativa.et" {

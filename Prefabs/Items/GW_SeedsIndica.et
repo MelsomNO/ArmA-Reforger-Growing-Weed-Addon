@@ -18,7 +18,7 @@ GenericEntity {
    }
   }
   MeshObject "{A69C70E81970A342}" {
-   Object "{2D6AEB8B581FCA04}Assets/Items/Medicine/FieldDressing_01/FieldDressing_USSR_01/FieldDressing_USSR_01.xob"
+   Object "{4B7F315DD3774443}Assets/Items/Medicine/FieldDressing_01/FieldDressing_US_01/FieldDressing_US_01.xob"
   }
   RigidBody "{13CAB0688538C55B}" {
    Mass 0.05
@@ -44,20 +44,6 @@ GenericEntity {
      }
      UIInfo SCR_ActionUIInfo "{9F1EDB07488D3EB7}" {
       Name "Pick Up"
-     }
-    }
-   }
-  }
-  ActionsManagerComponent "{6A6969B35217D926}" {
-   ActionContexts {
-    UserActionContext "{6A6969B3836C9713}" {
-    }
-   }
-   additionalActions {
-    PickupAction "{6A6969B35545A148}" {
-     UIInfo UIInfo "{6A6969B2716D1778}" {
-      Name "Pick up"
-      Icon "{55B22CEB4340AB0E}UI/Textures/UserActions/pickupaction.edds"
      }
     }
    }
