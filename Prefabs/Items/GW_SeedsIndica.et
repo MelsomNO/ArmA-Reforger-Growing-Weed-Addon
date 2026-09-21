@@ -1,15 +1,6 @@
 GenericEntity {
  ID "2E76C11D7B4D74E5"
  components {
-  MeshObject "{A69C70E81970A342}" {
-   Object "{2D6AEB8B581FCA04}Assets/Items/Medicine/FieldDressing_01/FieldDressing_USSR_01/FieldDressing_USSR_01.xob"
-  }
-  RplComponent "{4C95E941F704C518}" {
-  }
-  RigidBody "{13CAB0688538C55B}" {
-   BodyType Dynamic
-   Mass 0.05
-  }
   InventoryItemComponent "{F5C7AD463D9A7086}" {
    Attributes SCR_ItemAttributeCollection "{00B0DE00C4BC435D}" {
     ItemDisplayName SCR_InventoryUIInfo "{4855CB4010AAD45D}" {
@@ -19,12 +10,59 @@ GenericEntity {
     }
     ItemPhysAttributes ItemPhysicalAttributes "{CC811E12FB72ADF8}" {
      Weight 0.005
+     SizeSetupStrategy Manual
+     ItemVolume 1
     }
     CommonItemType "NONE"
+    m_Size SLOT_1x1
    }
+  }
+  MeshObject "{A69C70E81970A342}" {
+   Object "{2D6AEB8B581FCA04}Assets/Items/Medicine/FieldDressing_01/FieldDressing_USSR_01/FieldDressing_USSR_01.xob"
+  }
+  RigidBody "{13CAB0688538C55B}" {
+   Mass 0.05
   }
   SCR_ConsumableItemComponent "{6959F254F57C22BA}" {
    m_bCanBeHeld 0
+  }
+  ActionsManagerComponent "{768571C2C8D83109}" {
+   ActionContexts {
+    UserActionContext "{09D7F3F35FAE7B92}" {
+     UIInfo SCR_ActionUIInfo "{98727086D3FEACE9}" {
+      Name "Indica Seeds"
+     }
+     ContextName "ItemContext"
+     Position PointInfo "{C4F258D8F6A612B7}" {
+     }
+    }
+   }
+   additionalActions {
+    GW_PickUpAction "{B7198275674B7BD7}" {
+     ParentContextList {
+      "ItemContext"
+     }
+     UIInfo SCR_ActionUIInfo "{9F1EDB07488D3EB7}" {
+      Name "Pick Up"
+     }
+    }
+   }
+  }
+  ActionsManagerComponent "{6A6969B35217D926}" {
+   ActionContexts {
+    UserActionContext "{6A6969B3836C9713}" {
+    }
+   }
+   additionalActions {
+    PickupAction "{6A6969B35545A148}" {
+     UIInfo UIInfo "{6A6969B2716D1778}" {
+      Name "Pick up"
+      Icon "{55B22CEB4340AB0E}UI/Textures/UserActions/pickupaction.edds"
+     }
+    }
+   }
+  }
+  RplComponent "{4C95E941F704C518}" {
   }
  }
 }

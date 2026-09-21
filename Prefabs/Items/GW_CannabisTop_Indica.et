@@ -30,5 +30,27 @@ GenericEntity {
   }
  }
  coords 1 0 0
+  ActionsManagerComponent "{3A3DA25617BAB25D}" {
+   ActionContexts {
+    UserActionContext "{BDA5A5602A096577}" {
+     UIInfo SCR_ActionUIInfo "{E5C712A383FA5EE6}" {
+      Name "Cannabis Top — Indica"
+     }
+     ContextName "ItemContext"
+     Position PointInfo "{6761F4C482156E36}" {
+     }
+    }
+   }
+   additionalActions {
+    GW_PickUpAction "{18CD88AB5E342FED}" {
+     ParentContextList {
+      "ItemContext"
+     }
+     UIInfo SCR_ActionUIInfo "{55A70E279455D282}" {
+      Name "Pick Up"
+     }
+    }
+   }
+  }
  scale 3
 }

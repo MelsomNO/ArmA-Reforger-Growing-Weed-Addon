@@ -1,15 +1,6 @@
 GenericEntity {
  ID "49627D91740526CC"
  components {
-  MeshObject "{C2C615906B6085A0}" {
-   Object "{2D6AEB8B581FCA04}Assets/Items/Medicine/FieldDressing_01/FieldDressing_USSR_01/FieldDressing_USSR_01.xob"
-  }
-  RplComponent "{26D61D7D82E0038D}" {
-  }
-  RigidBody "{AD3864E42808ED76}" {
-   BodyType Dynamic
-   Mass 0.05
-  }
   InventoryItemComponent "{728788D811A56384}" {
    Attributes SCR_ItemAttributeCollection "{73996DD8F679CEBC}" {
     ItemDisplayName SCR_InventoryUIInfo "{0E56E1B432A5C230}" {
@@ -19,12 +10,45 @@ GenericEntity {
     }
     ItemPhysAttributes ItemPhysicalAttributes "{17F284786F70666A}" {
      Weight 0.005
+     SizeSetupStrategy Manual
+     ItemVolume 1
     }
     CommonItemType "NONE"
+    m_Size SLOT_1x1
    }
+  }
+  MeshObject "{C2C615906B6085A0}" {
+   Object "{2D6AEB8B581FCA04}Assets/Items/Medicine/FieldDressing_01/FieldDressing_USSR_01/FieldDressing_USSR_01.xob"
+  }
+  RigidBody "{AD3864E42808ED76}" {
+   Mass 0.05
   }
   SCR_ConsumableItemComponent "{2653D577DE088EEA}" {
    m_bCanBeHeld 0
+  }
+  ActionsManagerComponent "{D6764B840A3EEF78}" {
+   ActionContexts {
+    UserActionContext "{8EA68ECBCC0615F2}" {
+     UIInfo SCR_ActionUIInfo "{CE63C609EAEC189C}" {
+      Name "Sativa Seeds"
+     }
+     ContextName "ItemContext"
+     Position PointInfo "{87AB2D20DE6C6A41}" {
+     }
+    }
+   }
+   additionalActions {
+    GW_PickUpAction "{97D8382A6690F528}" {
+     ParentContextList {
+      "ItemContext"
+     }
+     UIInfo SCR_ActionUIInfo "{35219CE1922504D9}" {
+      Name "Pick Up"
+     }
+    }
+   }
+  }
+  RplComponent "{26D61D7D82E0038D}" {
   }
  }
 }

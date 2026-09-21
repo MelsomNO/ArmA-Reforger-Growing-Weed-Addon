@@ -29,5 +29,27 @@ GenericEntity {
   RplComponent "{44187BEAA9A53F0B}" {
   }
  }
+  ActionsManagerComponent "{0884045AECC0F131}" {
+   ActionContexts {
+    UserActionContext "{2D0C95270A7FFB56}" {
+     UIInfo SCR_ActionUIInfo "{DA7AC3DBBEB7A19B}" {
+      Name "Cannabis Top — Sativa"
+     }
+     ContextName "ItemContext"
+     Position PointInfo "{BD8DCE7FD4244EE9}" {
+     }
+    }
+   }
+   additionalActions {
+    GW_PickUpAction "{E27093527B962B95}" {
+     ParentContextList {
+      "ItemContext"
+     }
+     UIInfo SCR_ActionUIInfo "{5D46BB4FCF7D707C}" {
+      Name "Pick Up"
+     }
+    }
+   }
+  }
  scale 3
 }
