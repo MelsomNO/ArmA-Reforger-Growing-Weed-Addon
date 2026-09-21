@@ -45,6 +45,7 @@ GenericEntity {
    }
   }
   RplComponent "{46CC2E6D4A9379C7}" {
+   "Parent Node From Parent Entity" 0
   }
   SCR_EditableEntityComponent "{2A61CEBEFD3C8AE4}" {
    m_UIInfo SCR_UIInfo "{2E8108AB1D8BF529}" {

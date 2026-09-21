@@ -23,6 +23,7 @@ GenericEntity {
    m_EntityType ITEM
    m_UIInfo SCR_UIInfo "{6A6A1D8132735CCA}" {
     Name "Empty plant pot"
+    Description "An empty plant pot"
    }
    m_EntityInteraction SCR_EditableEntityInteraction "{6A6A1D80E756F994}" {
    }
@@ -62,6 +63,7 @@ GenericEntity {
    }
   }
   RplComponent "{2128BEAB6996B869}" {
+   "Parent Node From Parent Entity" 0
   }
  }
 }

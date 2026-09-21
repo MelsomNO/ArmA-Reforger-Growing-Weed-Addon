@@ -27,6 +27,7 @@ GenericEntity {
    Mass 0.05
   }
   RplComponent "{3988A0C4EB8A3824}" {
+   "Parent Node From Parent Entity" 0
   }
  }
  coords 1 0 0

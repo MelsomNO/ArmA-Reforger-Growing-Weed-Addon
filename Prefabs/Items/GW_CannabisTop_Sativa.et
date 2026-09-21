@@ -27,6 +27,7 @@ GenericEntity {
    Mass 0.05
   }
   RplComponent "{44187BEAA9A53F0B}" {
+   "Parent Node From Parent Entity" 0
   }
  }
   ActionsManagerComponent "{0884045AECC0F131}" {

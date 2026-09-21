@@ -49,6 +49,7 @@ GenericEntity {
    }
   }
   RplComponent "{26D61D7D82E0038D}" {
+   "Parent Node From Parent Entity" 0
   }
  }
 }
