@@ -43,5 +43,11 @@ GenericEntity {
     }
    }
   }
+  SCR_EditableEntityComponent "{F8FD6C5CD84665CE}" {
+   m_UIInfo SCR_UIInfo "{8CF04C8692CF6E68}" {
+    Name "Cannabis Plant (Indica, Vegetative)"
+    Description "An Indica cannabis plant in the vegetative growth stage."
+   }
+  }
  }
 }

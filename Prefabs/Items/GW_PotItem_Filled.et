@@ -1,8 +1,6 @@
 GenericEntity {
  ID "F2DF598262B426C7"
  components {
-  RplComponent "{46CC2E6D4A9379C7}" {
-  }
   MeshObject "{882303B9548CE5CF}" {
    Object "{2F1B2B1E664EA677}Models/Items/Pot_Filled.xob"
   }
@@ -19,31 +17,39 @@ GenericEntity {
    }
    additionalActions {
     GW_PlantAction "{A1575DE08F63FB7B}" {
-     Duration 3.0
-     m_iAnimMode 1
-     m_rSeedlingPrefab "{4673B6D9CFD85841}Prefabs/Plants/GW_WeedPlant_Sativa_Stage1.et"
-     m_rRequiredSeedItem "{72FF76B6070C3F65}Prefabs/Items/GW_SeedsSativa.et"
-     m_bConsumeSeed 1
      ParentContextList {
       "PotContext"
      }
      UIInfo SCR_ActionUIInfo "{BCD844BEBFA12EF3}" {
       Name "Plant Sativa Seed"
      }
+     Duration 3
+     m_iAnimMode 1
+     m_rSeedlingPrefab "{4673B6D9CFD85841}Prefabs/Plants/GW_WeedPlant_Sativa_Stage1.et"
+     m_rRequiredSeedItem "{72FF76B6070C3F65}Prefabs/Items/GW_SeedsSativa.et"
+     m_bConsumeSeed 1
     }
     GW_PlantAction "{FDF9635687EA878C}" {
-     Duration 3.0
-     m_iAnimMode 1
-     m_rSeedlingPrefab "{BE9A56E00CD35FA2}Prefabs/Plants/GW_WeedPlant_Indica_Stage1.et"
-     m_rRequiredSeedItem "{0D934946BE982287}Prefabs/Items/GW_SeedsIndica.et"
-     m_bConsumeSeed 1
      ParentContextList {
       "PotContext"
      }
      UIInfo SCR_ActionUIInfo "{96B022A5377F7BBE}" {
       Name "Plant Indica Seed"
      }
+     Duration 3
+     m_iAnimMode 1
+     m_rSeedlingPrefab "{BE9A56E00CD35FA2}Prefabs/Plants/GW_WeedPlant_Indica_Stage1.et"
+     m_rRequiredSeedItem "{0D934946BE982287}Prefabs/Items/GW_SeedsIndica.et"
+     m_bConsumeSeed 1
     }
+   }
+  }
+  RplComponent "{46CC2E6D4A9379C7}" {
+  }
+  SCR_EditableEntityComponent "{2A61CEBEFD3C8AE4}" {
+   m_UIInfo SCR_UIInfo "{2E8108AB1D8BF529}" {
+    Name "Filled Plant Pot"
+    Description "A dirt-filled pot ready for a cannabis seed."
    }
   }
  }

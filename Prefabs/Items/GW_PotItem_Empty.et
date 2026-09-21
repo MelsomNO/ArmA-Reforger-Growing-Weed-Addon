@@ -19,6 +19,15 @@ GenericEntity {
   }
   RigidBody "{6A691790E0F45E59}" {
   }
+  SCR_EditableEntityComponent "{6A6A1D80F005EF2E}" {
+   m_EntityType ITEM
+   m_UIInfo SCR_UIInfo "{6A6A1D8132735CCA}" {
+    Name "Empty plant pot"
+   }
+   m_EntityInteraction SCR_EditableEntityInteraction "{6A6A1D80E756F994}" {
+   }
+   m_Flags PLACEABLE
+  }
   ActionsManagerComponent "{B3357E0809BCB835}" {
    ActionContexts {
     UserActionContext "{E6FCCA6B464A6A51}" {

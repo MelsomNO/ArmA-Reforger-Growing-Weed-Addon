@@ -43,5 +43,11 @@ GenericEntity {
     }
    }
   }
+  SCR_EditableEntityComponent "{9BE7372158018EC5}" {
+   m_UIInfo SCR_UIInfo "{9AFECF606164485E}" {
+    Name "Cannabis Seedling (Sativa)"
+    Description "A newly planted Sativa seedling."
+   }
+  }
  }
 }

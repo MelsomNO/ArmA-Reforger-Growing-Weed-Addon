@@ -54,5 +54,11 @@ GenericEntity {
     }
    }
   }
+  SCR_EditableEntityComponent "{ADA52C049D46EDFD}" {
+   m_UIInfo SCR_UIInfo "{F98C4C3D7D61CFA9}" {
+    Name "Cannabis Plant (Indica, Mature)"
+    Description "A mature Indica cannabis plant, ready to harvest."
+   }
+  }
  }
 }

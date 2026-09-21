@@ -54,5 +54,11 @@ GenericEntity {
     }
    }
   }
+  SCR_EditableEntityComponent "{B088709BD68BD850}" {
+   m_UIInfo SCR_UIInfo "{7072E65B92A657A6}" {
+    Name "Cannabis Plant (Sativa, Mature)"
+    Description "A mature Sativa cannabis plant, ready to harvest."
+   }
+  }
  }
 }

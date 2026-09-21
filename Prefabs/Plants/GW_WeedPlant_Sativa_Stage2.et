@@ -43,5 +43,11 @@ GenericEntity {
     }
    }
   }
+  SCR_EditableEntityComponent "{48E9488DFA369EE4}" {
+   m_UIInfo SCR_UIInfo "{20ED8D3B0007E1BB}" {
+    Name "Cannabis Plant (Sativa, Vegetative)"
+    Description "A Sativa cannabis plant in the vegetative growth stage."
+   }
+  }
  }
 }
