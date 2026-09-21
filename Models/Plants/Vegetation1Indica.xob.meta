@@ -3,17 +3,17 @@ MetaFileClass {
  Configurations {
   FBXResourceClass PC {
    MaterialAssigns {
-    MaterialAssignClass "{BCA99D5195DDA850}" {
+    MaterialAssignClass "{6A693A7225132012}" {
      SourceMaterial "Weed"
      AssignedMaterial "{4E2E06A7A5B919BA}Models/Plants/Data/Weed.emat"
     }
-    MaterialAssignClass "{E5791A94AD0FE763}" {
+    MaterialAssignClass "{6A693A7225132007}" {
      SourceMaterial "Material"
-     AssignedMaterial "{C5DD48C1A151E82D}Models/Plants/Data/Stem.emat"
+     AssignedMaterial "{A3F71C0819B47499}Models/Plants/Data/Material.emat"
     }
-    MaterialAssignClass "{EA6738FCC09F476D}" {
+    MaterialAssignClass "{6A693A722513207B}" {
      SourceMaterial "Plant_Pot_var1"
-     AssignedMaterial "{A8668B1F685B5E32}Models/Items/Data/PotClay.emat"
+     AssignedMaterial "{74BEF6EE0E05571C}Models/Plants/Data/Plant_Pot_var1.emat"
     }
    }
    MeshParams {

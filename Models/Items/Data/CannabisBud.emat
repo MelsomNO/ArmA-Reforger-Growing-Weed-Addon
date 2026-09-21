@@ -1,0 +1,4 @@
+MatPBRBasic {
+ BCRMap "{C73A2B9916F38E09}Textures/Items/CannabisBud_co.edds"
+ NMOMap "{DC81B71AD8935489}Textures/Items/CannabisBud_nohq.edds"
+}

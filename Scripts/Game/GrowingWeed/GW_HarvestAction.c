@@ -3,8 +3,11 @@ class GW_HarvestAction : ScriptedUserAction
 	[Attribute("", UIWidgets.ResourceNamePicker, desc: "Prefab spawned into the player's inventory on harvest (e.g. a cannabis-top item). Leave empty to grant no inventory yield.", params: "et")]
 	protected ResourceName m_rYieldPrefab;
 
-	[Attribute(defvalue: "1", desc: "How many yield items to grant per harvest.")]
-	protected int m_iYieldCount;
+	[Attribute(defvalue: "2", desc: "Minimum number of yield items granted per harvest (inclusive).")]
+	protected int m_iYieldMin;
+
+	[Attribute(defvalue: "4", desc: "Maximum number of yield items granted per harvest (inclusive). Actual count is uniformly random in [min, max].")]
+	protected int m_iYieldMax;
 
 	[Attribute("", UIWidgets.ResourceNamePicker, desc: "Prefab spawned in place of the plant on harvest (typically the filled pot, so the player can replant). Leave empty to just delete the plant.", params: "et")]
 	protected ResourceName m_rReplacementPrefab;
@@ -33,7 +36,11 @@ class GW_HarvestAction : ScriptedUserAction
 			SCR_InventoryStorageManagerComponent invMgr = SCR_InventoryStorageManagerComponent.Cast(pUserEntity.FindComponent(SCR_InventoryStorageManagerComponent));
 			if (invMgr)
 			{
-				for (int i = 0; i < m_iYieldCount; i++)
+				int lo = m_iYieldMin;
+				int hi = m_iYieldMax;
+				if (hi < lo) hi = lo;
+				int count = Math.RandomIntInclusive(lo, hi);
+				for (int i = 0; i < count; i++)
 					invMgr.TrySpawnPrefabToStorage(m_rYieldPrefab);
 			}
 		}

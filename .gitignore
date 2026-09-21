@@ -9,6 +9,9 @@ Backup/
 *.xob
 resourceDatabase.rdb
 
+# Blender autosave backups
+*.blend1
+
 # Enfusion MCP handler — installed automatically by wb_launch, cleaned before publishing
 Scripts/WorkbenchGame/EnfusionMCP/
 

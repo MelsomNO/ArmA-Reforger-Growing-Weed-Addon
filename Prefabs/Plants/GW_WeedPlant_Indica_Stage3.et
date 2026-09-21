@@ -42,6 +42,7 @@ GenericEntity {
      }
     }
     GW_HarvestAction "{672B89F1B52FF536}" {
+     m_rYieldPrefab "{850B60FDE623798B}Prefabs/Items/GW_CannabisTop_Indica.et"
      m_rReplacementPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
      Duration 2.0
      ParentContextList {

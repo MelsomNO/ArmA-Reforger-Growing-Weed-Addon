@@ -1,0 +1,33 @@
+GenericEntity {
+ ID "82CFF926F5B94462"
+ components {
+  InventoryItemComponent "{2BCC9A30E74EC2B6}" {
+   Attributes SCR_ItemAttributeCollection "{3B53B34D3E9B2683}" {
+    ItemDisplayName SCR_InventoryUIInfo "{B486CFC91F4880BC}" {
+     Name "Sativa Bud"
+     Description "A Sativa Cannabis Nugget."
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{83913E1324DB464E}" {
+     Weight 0.005
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{999514695E4E6581}" {
+      CameraOrbitAngles 1 0 0
+      CameraDistanceToItem 0.07
+     }
+    }
+    CommonItemType "NONE"
+    m_Size SLOT_1x1
+   }
+  }
+  MeshObject "{270B54FAC093B9EB}" {
+   Object "{6565D5497910CEAD}Models/Items/CannabisBud.xob"
+  }
+  RigidBody "{2D464DC1CA38E40C}" {
+   Mass 0.05
+  }
+  RplComponent "{44187BEAA9A53F0B}" {
+  }
+ }
+ scale 3
+}

@@ -15,6 +15,10 @@ MetaFileClass {
      SourceMaterial "Plant_Pot_var1"
      AssignedMaterial "{A8668B1F685B5E32}Models/Items/Data/PotClay.emat"
     }
+    MaterialAssignClass "{6A6969A3AEB849A1}" {
+     SourceMaterial "CannabisBud"
+     AssignedMaterial "{54DC9BA95F59472E}Models/Plants/Data/CannabisBud.emat"
+    }
    }
    MeshParams {
     MeshParam FloweringSativa {
