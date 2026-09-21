@@ -15,5 +15,11 @@ resourceDatabase.rdb
 # Enfusion MCP handler — installed automatically by wb_launch, cleaned before publishing
 Scripts/WorkbenchGame/EnfusionMCP/
 
-# Raw source assets — retain locally, don't commit (CGTrader license considerations)
+# Raw source assets — retain locally, don't commit (CGTrader / Sketchfab
+# license considerations: royalty-free licenses forbid redistributing the
+# raw source files; the mod ships compiled .xob artifacts via the Workshop
+# package instead).
 3d models import/
+*.fbx
+*.blend
+Models/**/_workfiles/
