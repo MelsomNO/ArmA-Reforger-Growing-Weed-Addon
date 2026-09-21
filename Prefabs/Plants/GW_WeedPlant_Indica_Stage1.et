@@ -26,7 +26,7 @@ GenericEntity {
       "CheckContext"
      }
      UIInfo SCR_ActionUIInfo "{E3C395EDE80FF767}" {
-      Name "Check Growth"
+      Name ""
      }
     }
     GW_UprootAction "{4A154B09A8AD7FC4}" {
@@ -38,6 +38,7 @@ GenericEntity {
      }
      Duration 3
      m_iAnimMode 2
+     m_rReplacementPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
     }
    }
   }

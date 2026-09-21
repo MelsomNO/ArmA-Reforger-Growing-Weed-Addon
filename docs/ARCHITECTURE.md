@@ -209,19 +209,23 @@ Deliberately does not inherit `GW_ToolAnimAction` — a bare-handed pluck can't 
 
 ### `GW_UprootAction` extends `GW_ShovelRequiredAction`
 
-Attaches to every plant stage. Removes the plant entirely. `m_iAnimMode 2` (demolition/dig-out) in each prefab entry.
+Attaches to every plant stage and to `GW_PotItem_Filled.et`. Deletes the owner and — if `m_rReplacementPrefab` is set — spawns that prefab at the owner's transform. `m_iAnimMode 2` (demolition/dig-out) in each prefab entry. Runs server-side only (`Replication.IsServer()` guard) so the world-spawn replicates.
+
+The uproot chain is two-step: **plant → filled pot → empty pot**. Each step preserves the world position:
+- Plant stages 1-3 set `m_rReplacementPrefab` to `GW_PotItem_Filled.et` so uprooting leaves the dirt-filled pot in place.
+- `GW_PotItem_Filled.et` adds a second `GW_UprootAction` labelled "Empty Pot" with `m_rReplacementPrefab` set to `GW_PotItem_Empty.et`; the empty pot has an inventory item component so the player can pick it up.
 
 Attributes:
 
 | Attribute | Description |
 |---|---|
-| `m_rReturnedItemPrefab` | Optional prefab granted to the player on uproot. Currently unwired (empty) since the design chose to keep uprooting destructive rather than reversible. Set this to `GW_PotItem_Empty.et` if you want players to get the pot back. |
+| `m_rReplacementPrefab` | Prefab spawned at the owner's transform after uproot. Empty = just delete the owner. |
 
 ### `GW_CheckGrowthAction` (plain `ScriptedUserAction`)
 
-Attaches to every plant stage. Shows a hint with progress percent and remaining hours.
+Attaches to every plant stage. The action label itself reports the current progress — hovering the plant shows e.g. `Growth: 42%` directly in the interaction UI. Terminal stages read `Growth: fully grown`.
 
-Uses `SCR_HintManagerComponent.GetInstance().ShowCustomHint(msg, "Growing Weed", 4)`. Terminal stages report "This plant is fully grown."
+Implemented via `GetActionNameScript`, which the interaction UI polls each frame the player is looking at the plant, so the label stays current without any RPC or hint plumbing. `PerformAction` is a no-op — the information is the label. Marked `HasLocalEffectOnlyScript` so the poll runs on the client.
 
 ### `GW_PickUpAction` (plain `ScriptedUserAction`)
 

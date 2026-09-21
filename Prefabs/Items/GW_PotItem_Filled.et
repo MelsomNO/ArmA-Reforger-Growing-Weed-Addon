@@ -42,6 +42,17 @@ GenericEntity {
      m_rRequiredSeedItem "{0D934946BE982287}Prefabs/Items/GW_SeedsIndica.et"
      m_bConsumeSeed 1
     }
+    GW_UprootAction "{6A9D8F2C3E1B4A50}" {
+     ParentContextList {
+      "PotContext"
+     }
+     UIInfo SCR_ActionUIInfo "{6A9D8F2C3E1B4A51}" {
+      Name "Empty Pot"
+     }
+     Duration 3.0
+     m_iAnimMode 2
+     m_rReplacementPrefab "{776EA4A47C011B5E}Prefabs/Items/GW_PotItem_Empty.et"
+    }
    }
   }
   RplComponent "{46CC2E6D4A9379C7}" {

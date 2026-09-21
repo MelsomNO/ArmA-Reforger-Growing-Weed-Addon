@@ -28,7 +28,7 @@ GenericEntity {
       "CheckContext"
      }
      UIInfo SCR_ActionUIInfo "{23BA8E7F66C48C0A}" {
-      Name "Check Growth"
+      Name ""
      }
     }
     GW_UprootAction "{87ED3426B6D3EAC5}" {
@@ -40,6 +40,7 @@ GenericEntity {
      UIInfo SCR_ActionUIInfo "{77D00A2D537AE85D}" {
       Name "Uproot Plant"
      }
+     m_rReplacementPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
     }
    }
   }
