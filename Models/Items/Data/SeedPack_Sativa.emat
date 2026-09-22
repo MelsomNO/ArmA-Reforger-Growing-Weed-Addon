@@ -1,0 +1,5 @@
+MatPBRBasic {
+ AlphaTest 1
+ BCRMap "{A1B0C2D3E4F50004}Textures/Items/seedpacket_sativa_BCR.edds"
+ NMOMap "{A1B0C2D3E4F50005}Textures/Items/seedpacket_sativa_NMO.edds"
+}

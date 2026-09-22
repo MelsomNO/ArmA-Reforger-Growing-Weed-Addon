@@ -6,19 +6,25 @@ GenericEntity {
     ItemDisplayName SCR_InventoryUIInfo "{4855CB4010AAD45D}" {
      Name "Indica Seeds"
      Description "A pack of Cannabis Indica Seeds."
-     Icon "{7A1040483D584A94}Textures/Item icons/weed_seeds.edds"
     }
     ItemPhysAttributes ItemPhysicalAttributes "{CC811E12FB72ADF8}" {
      Weight 0.005
      SizeSetupStrategy Manual
      ItemVolume 1
     }
+    CustomAttributes {
+     SCR_CharacterInventoryPreviewAttributes "{6A6CE1FEE09B87DC}" {
+      CameraPreset Bottom
+      CameraOrbitAngles 0 180 0
+      CameraDistanceToItem 0.13
+     }
+    }
     CommonItemType "NONE"
     m_Size SLOT_1x1
    }
   }
   MeshObject "{A69C70E81970A342}" {
-   Object "{4B7F315DD3774443}Assets/Items/Medicine/FieldDressing_01/FieldDressing_US_01/FieldDressing_US_01.xob"
+   Object "{41F5A6B839C8C192}Models/Items/SeedPack_Indica.xob"
   }
   RigidBody "{13CAB0688538C55B}" {
    Mass 0.05

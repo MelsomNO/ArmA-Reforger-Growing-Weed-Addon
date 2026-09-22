@@ -1,0 +1,44 @@
+MetaFileClass {
+ Name "{41F5A6B839C8C192}Models/Items/SeedPack_Indica.xob"
+ Configurations {
+  FBXResourceClass PC {
+   MaterialAssigns {
+    MaterialAssignClass "{A1B0C2D3E4F51001}" {
+     SourceMaterial "SeedPacket_Indica_Atlas"
+     AssignedMaterial "{A1B0C2D3E4F50007}Models/Items/Data/SeedPack_Indica.emat"
+    }
+   }
+   MeshParams {
+    MeshParam SeedPack_Front {
+    }
+    MeshParam SeedPack_Back {
+    }
+   }
+   Common TXOCommonClass "{A1B0C2D3E4F52001}" : "{0877E7C4BB2B2C9A}Configs/System/ResourceTypes/PC/MeshObjectCommon.conf" {
+   }
+   ApplicationVendor "Blender Foundation"
+   ApplicationName "Blender (stable FBX IO)"
+   ApplicationVersion "5.2.2 LTS"
+  }
+  FBXResourceClass XBOX_ONE : PC {
+   Common TXOCommonClass "{A1B0C2D3E4F52002}" : "{9D5B6207F7628CE2}Configs/System/ResourceTypes/XBOX_ONE/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+   Common TXOCommonClass "{A1B0C2D3E4F52003}" : "{DD9F02115C764647}Configs/System/ResourceTypes/XBOX_SERIES/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS4 : PC {
+   Common TXOCommonClass "{A1B0C2D3E4F52004}" : "{53EC476BC921D99A}Configs/System/ResourceTypes/PS4/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS5 : PC {
+   Common TXOCommonClass "{A1B0C2D3E4F52005}" : "{F62AA8E7B8EA9D26}Configs/System/ResourceTypes/PS5/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass HEADLESS : PC {
+   Common TXOCommonClass "{A1B0C2D3E4F52006}" : "{3A5B3356978039E8}Configs/System/ResourceTypes/HEADLESS/MeshObjectCommon.conf" {
+   }
+  }
+ }
+}

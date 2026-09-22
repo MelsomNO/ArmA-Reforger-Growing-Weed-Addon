@@ -6,19 +6,25 @@ GenericEntity {
     ItemDisplayName SCR_InventoryUIInfo "{0E56E1B432A5C230}" {
      Name "Sativa Seeds"
      Description "A pack of Cannabis Sativa Seeds."
-     Icon "{7A1040483D584A94}Textures/Item icons/weed_seeds.edds"
     }
     ItemPhysAttributes ItemPhysicalAttributes "{17F284786F70666A}" {
      Weight 0.005
      SizeSetupStrategy Manual
      ItemVolume 1
     }
+    CustomAttributes {
+     SCR_CharacterInventoryPreviewAttributes "{6A6CE1F8D1D3D6D9}" {
+      CameraPreset Bottom
+      CameraOrbitAngles 0 180 0
+      CameraDistanceToItem 0.13
+     }
+    }
     CommonItemType "NONE"
     m_Size SLOT_1x1
    }
   }
   MeshObject "{C2C615906B6085A0}" {
-   Object "{2D6AEB8B581FCA04}Assets/Items/Medicine/FieldDressing_01/FieldDressing_USSR_01/FieldDressing_USSR_01.xob"
+   Object "{B087788006397E9F}Models/Items/SeedPack_Sativa.xob"
   }
   RigidBody "{AD3864E42808ED76}" {
    Mass 0.05
