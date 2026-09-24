@@ -1,5 +1,8 @@
 MatPBRBasic {
- AlphaTest 1
+ Color 0.72 0.72 0.72 1
+ RoughnessScale 1
+ MetalnessScale 0
+ DielectricReflectance 0.06
  BCRMap "{A1B0C2D3E4F50004}Textures/Items/seedpacket_sativa_BCR.edds"
  NMOMap "{A1B0C2D3E4F50005}Textures/Items/seedpacket_sativa_NMO.edds"
 }

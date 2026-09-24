@@ -1,6 +1,8 @@
 MatPBRBasic {
- AlphaTest 1
- VFXMap   anim( 0 )
+ Color 0.72 0.72 0.72 1
+ RoughnessScale 1
+ MetalnessScale 0
+ DielectricReflectance 0.06
  BCRMap "{A1B0C2D3E4F50001}Textures/Items/seedpacket_indica_BCR.edds"
  NMOMap "{A1B0C2D3E4F50002}Textures/Items/seedpacket_indica_NMO.edds"
 }

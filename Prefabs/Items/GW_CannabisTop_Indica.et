@@ -10,14 +10,28 @@ GenericEntity {
     ItemPhysAttributes ItemPhysicalAttributes "{F3B7934DC1AD5594}" {
      Weight 0.005
     }
+    ItemAnimationAttributes ItemAnimationAttributes "{6A70FD7CE88C3908}" {
+     AnimationInstance "{4FCBEA45CAEBC9C0}anims/workspaces/player/player_main_1h.asi"
+     AnimationIKPose "{3E5C93E85F05C6B5}Assets/Weapons/Grenades/RGD5/anims/anm/p_rgd5_ik.anm"
+     AnimationAttachments {
+      AnimationAttachmentInfo "{6A70FD7CE88C390A}" {
+       AnimGraph "{25B5CD66792F60F4}Assets/Items/Medicine/Workspaces/MorphineInjection_01.agr"
+       AnimInstance "{B900F61FD4D7F1DA}Assets/Items/Medicine/Workspaces/morphine_injection_player.asi"
+       BindingName "Gadget"
+      }
+     }
+     HandAdditiveRotation 0 -104 -104
+     HandAdditiveTranslation 0 0.01 0
+    }
     CustomAttributes {
      PreviewRenderAttributes "{C569D8756DD7D96D}" {
       CameraOrbitAngles 15 0 0
-      CameraDistanceToItem 0.07
+      CameraDistanceToItem 0.05
      }
     }
     CommonItemType "NONE"
     m_Size SLOT_1x1
+    m_SlotType SLOT_ANY
    }
   }
   MeshObject "{25370D16E90F05A8}" {
@@ -26,11 +40,10 @@ GenericEntity {
   RigidBody "{396B1EC9658B1EAC}" {
    Mass 0.05
   }
-  RplComponent "{3988A0C4EB8A3824}" {
-   "Parent Node From Parent Entity" 0
+  SCR_ConsumableItemComponent "{6A70FD7CE88C390C}" {
+   m_eAnimVariable ADRIANOV
+   m_bVisibleEquipped 1
   }
- }
- coords 1 0 0
   ActionsManagerComponent "{3A3DA25617BAB25D}" {
    ActionContexts {
     UserActionContext "{BDA5A5602A096577}" {
@@ -48,10 +61,17 @@ GenericEntity {
       "ItemContext"
      }
      UIInfo SCR_ActionUIInfo "{55A70E279455D282}" {
-      Name "Pick Up"
+      Name "#AR-Inventory_PickUp"
+      m_sIconName "pick-up"
      }
     }
    }
   }
+  RplComponent "{3988A0C4EB8A3824}" {
+   "Parent Node From Parent Entity" 0
+  }
+ }
+ coords 0 0 0
+ angles 0 0 104.197
  scale 3
 }

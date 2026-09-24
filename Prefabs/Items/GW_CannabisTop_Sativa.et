@@ -10,10 +10,23 @@ GenericEntity {
     ItemPhysAttributes ItemPhysicalAttributes "{83913E1324DB464E}" {
      Weight 0.005
     }
+    ItemAnimationAttributes ItemAnimationAttributes "{6A70FD7CE88C3909}" {
+     AnimationInstance "{4FCBEA45CAEBC9C0}anims/workspaces/player/player_main_1h.asi"
+     AnimationIKPose "{3E5C93E85F05C6B5}Assets/Weapons/Grenades/RGD5/anims/anm/p_rgd5_ik.anm"
+     AnimationAttachments {
+      AnimationAttachmentInfo "{6A70FD7CE88C390B}" {
+       AnimGraph "{25B5CD66792F60F4}Assets/Items/Medicine/Workspaces/MorphineInjection_01.agr"
+       AnimInstance "{B900F61FD4D7F1DA}Assets/Items/Medicine/Workspaces/morphine_injection_player.asi"
+       BindingName "Gadget"
+      }
+     }
+     HandAdditiveRotation -104 0 90
+     HandAdditiveTranslation 0 0.01 0
+    }
     CustomAttributes {
      PreviewRenderAttributes "{999514695E4E6581}" {
       CameraOrbitAngles 1 0 0
-      CameraDistanceToItem 0.07
+      CameraDistanceToItem 0.05
      }
     }
     CommonItemType "NONE"
@@ -26,31 +39,35 @@ GenericEntity {
   RigidBody "{2D464DC1CA38E40C}" {
    Mass 0.05
   }
+  SCR_ConsumableItemComponent "{6A70FD7CE88C390D}" {
+   m_eAnimVariable ADRIANOV
+   m_bVisibleEquipped 1
+  }
+  ActionsManagerComponent "{0884045AECC0F131}" {
+   ActionContexts {
+    UserActionContext "{6A70D4D98F769864}" {
+     ContextName "default"
+     Position PointInfo "{6A70D4D98195D525}" {
+     }
+     Radius 0.2
+     LineOfSightCheck 1
+    }
+   }
+   additionalActions {
+    SCR_PickUpItemAction "{6A70D4DE70CDBCBB}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionContextUIInfo "{6A70D4DE610A74E8}" {
+      Name "#AR-Inventory_PickUp"
+      m_sIconName "pick-up"
+     }
+    }
+   }
+  }
   RplComponent "{44187BEAA9A53F0B}" {
    "Parent Node From Parent Entity" 0
   }
  }
-  ActionsManagerComponent "{0884045AECC0F131}" {
-   ActionContexts {
-    UserActionContext "{2D0C95270A7FFB56}" {
-     UIInfo SCR_ActionUIInfo "{DA7AC3DBBEB7A19B}" {
-      Name "Cannabis Top — Sativa"
-     }
-     ContextName "ItemContext"
-     Position PointInfo "{BD8DCE7FD4244EE9}" {
-     }
-    }
-   }
-   additionalActions {
-    GW_PickUpAction "{E27093527B962B95}" {
-     ParentContextList {
-      "ItemContext"
-     }
-     UIInfo SCR_ActionUIInfo "{5D46BB4FCF7D707C}" {
-      Name "Pick Up"
-     }
-    }
-   }
-  }
  scale 3
 }
