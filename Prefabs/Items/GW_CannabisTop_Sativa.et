@@ -4,8 +4,8 @@ GenericEntity {
   InventoryItemComponent "{2BCC9A30E74EC2B6}" {
    Attributes SCR_ItemAttributeCollection "{3B53B34D3E9B2683}" {
     ItemDisplayName SCR_InventoryUIInfo "{B486CFC91F4880BC}" {
-     Name "Sativa Bud"
-     Description "A Sativa Cannabis Nugget."
+     Name "#GW-Item_SativaBud_Name"
+     Description "#GW-Item_SativaBud_Desc"
     }
     ItemPhysAttributes ItemPhysicalAttributes "{83913E1324DB464E}" {
      Weight 0.005
@@ -20,8 +20,7 @@ GenericEntity {
        BindingName "Gadget"
       }
      }
-     HandAdditiveRotation -104 0 90
-     HandAdditiveTranslation 0 0.01 0
+     HandAdditiveRotation -110 0 90
     }
     CustomAttributes {
      PreviewRenderAttributes "{999514695E4E6581}" {
@@ -31,6 +30,7 @@ GenericEntity {
     }
     CommonItemType "NONE"
     m_Size SLOT_1x1
+    m_SlotType SLOT_ANY
    }
   }
   MeshObject "{270B54FAC093B9EB}" {
@@ -69,5 +69,6 @@ GenericEntity {
    "Parent Node From Parent Entity" 0
   }
  }
- scale 3
+ coords 0 0 0
+ scale 4
 }

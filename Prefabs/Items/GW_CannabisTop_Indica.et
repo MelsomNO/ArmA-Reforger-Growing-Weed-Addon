@@ -4,8 +4,8 @@ GenericEntity {
   InventoryItemComponent "{A5908D4A99C45E24}" {
    Attributes SCR_ItemAttributeCollection "{07208490827730A8}" {
     ItemDisplayName SCR_InventoryUIInfo "{D7BF69F026582EA5}" {
-     Name "Indica Bud"
-     Description "A Indica Cannabis Nugget."
+     Name "#GW-Item_IndicaBud_Name"
+     Description "#GW-Item_IndicaBud_Desc"
     }
     ItemPhysAttributes ItemPhysicalAttributes "{F3B7934DC1AD5594}" {
      Weight 0.005
@@ -20,8 +20,8 @@ GenericEntity {
        BindingName "Gadget"
       }
      }
-     HandAdditiveRotation 0 -104 -104
-     HandAdditiveTranslation 0 0.01 0
+     HandAdditiveRotation -90 0 90
+     HandAdditiveTranslation -0.02 0 0
     }
     CustomAttributes {
      PreviewRenderAttributes "{C569D8756DD7D96D}" {
@@ -48,7 +48,7 @@ GenericEntity {
    ActionContexts {
     UserActionContext "{BDA5A5602A096577}" {
      UIInfo SCR_ActionUIInfo "{E5C712A383FA5EE6}" {
-      Name "Cannabis Top — Indica"
+      Name "#GW-Context_CannabisTopIndica"
      }
      ContextName "ItemContext"
      Position PointInfo "{6761F4C482156E36}" {
@@ -72,6 +72,5 @@ GenericEntity {
   }
  }
  coords 0 0 0
- angles 0 0 104.197
- scale 3
+ scale 4
 }

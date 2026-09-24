@@ -4,13 +4,25 @@ GenericEntity {
   InventoryItemComponent "{F5C7AD463D9A7086}" {
    Attributes SCR_ItemAttributeCollection "{00B0DE00C4BC435D}" {
     ItemDisplayName SCR_InventoryUIInfo "{4855CB4010AAD45D}" {
-     Name "Indica Seeds"
-     Description "A pack of Cannabis Indica Seeds."
+     Name "#GW-Item_IndicaSeeds_Name"
+     Description "#GW-Item_IndicaSeeds_Desc"
     }
     ItemPhysAttributes ItemPhysicalAttributes "{CC811E12FB72ADF8}" {
      Weight 0.005
      SizeSetupStrategy Manual
      ItemVolume 1
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{6A70D4C549A85319}" {
+     AnimationInstance "{56794534F6B8C3D7}Assets/Items/Equipment/workspaces/player_map.asi"
+     AnimationAttachments {
+      AnimationAttachmentInfo "{6A70D4C549A8531A}" {
+       AnimGraph "{83675D0B0AB1B2C3}Assets/Items/Equipment/workspaces/paper_map.agr"
+       AnimInstance "{56794534F6B8C3D7}Assets/Items/Equipment/workspaces/player_map.asi"
+       BindingName "Gadget"
+      }
+     }
+     HandAdditiveTranslation -0.02 0.01 0
+     AllowInspection 1
     }
     CustomAttributes {
      SCR_CharacterInventoryPreviewAttributes "{6A6CE1FEE09B87DC}" {
@@ -21,6 +33,7 @@ GenericEntity {
     }
     CommonItemType "NONE"
     m_Size SLOT_1x1
+    m_SlotType SLOT_ANY
    }
   }
   MeshObject "{A69C70E81970A342}" {
@@ -30,26 +43,27 @@ GenericEntity {
    Mass 0.05
   }
   SCR_ConsumableItemComponent "{6959F254F57C22BA}" {
-   m_bCanBeHeld 0
+   m_eAnimVariable MAP
+   m_bVisibleEquipped 1
   }
   ActionsManagerComponent "{768571C2C8D83109}" {
    ActionContexts {
-    UserActionContext "{09D7F3F35FAE7B92}" {
-     UIInfo SCR_ActionUIInfo "{98727086D3FEACE9}" {
-      Name "Indica Seeds"
+    UserActionContext "{6A70D4DB8289FFEA}" {
+     ContextName "default"
+     Position PointInfo "{6A70D4D87F41C3E8}" {
      }
-     ContextName "ItemContext"
-     Position PointInfo "{C4F258D8F6A612B7}" {
-     }
+     Radius 0.2
+     LineOfSightCheck 1
     }
    }
    additionalActions {
-    GW_PickUpAction "{B7198275674B7BD7}" {
+    SCR_PickUpItemAction "{6A70D4DB4DE7088F}" {
      ParentContextList {
-      "ItemContext"
+      "default"
      }
-     UIInfo SCR_ActionUIInfo "{9F1EDB07488D3EB7}" {
-      Name "Pick Up"
+     UIInfo SCR_ActionUIInfo "{6A70D4DB30FEA167}" {
+      Name "#AR-Inventory_PickUp"
+      m_sIconName "pick-up"
      }
     }
    }

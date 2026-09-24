@@ -4,23 +4,37 @@ GenericEntity {
   InventoryItemComponent "{728788D811A56384}" {
    Attributes SCR_ItemAttributeCollection "{73996DD8F679CEBC}" {
     ItemDisplayName SCR_InventoryUIInfo "{0E56E1B432A5C230}" {
-     Name "Sativa Seeds"
-     Description "A pack of Cannabis Sativa Seeds."
+     Name "#GW-Item_SativaSeeds_Name"
+     Description "#GW-Item_SativaSeeds_Desc"
     }
     ItemPhysAttributes ItemPhysicalAttributes "{17F284786F70666A}" {
      Weight 0.005
      SizeSetupStrategy Manual
      ItemVolume 1
     }
+    ItemAnimationAttributes ItemAnimationAttributes "{6A70D4C52064A9A0}" {
+     AnimationInstance "{56794534F6B8C3D7}Assets/Items/Equipment/workspaces/player_map.asi"
+     AnimationAttachments {
+      AnimationAttachmentInfo "{6A70D4C52064A9A1}" {
+       AnimGraph "{83675D0B0AB1B2C3}Assets/Items/Equipment/workspaces/paper_map.agr"
+       AnimInstance "{56794534F6B8C3D7}Assets/Items/Equipment/workspaces/player_map.asi"
+       BindingName "Gadget"
+      }
+     }
+     HandAdditiveTranslation -0.02 0.01 0
+     AllowInspection 1
+    }
     CustomAttributes {
      SCR_CharacterInventoryPreviewAttributes "{6A6CE1F8D1D3D6D9}" {
       CameraPreset Bottom
       CameraOrbitAngles 0 180 0
       CameraDistanceToItem 0.13
+      AnimationInstance "{56794534F6B8C3D7}Assets/Items/Equipment/workspaces/player_map.asi"
      }
     }
     CommonItemType "NONE"
     m_Size SLOT_1x1
+    m_SlotType SLOT_ANY
    }
   }
   MeshObject "{C2C615906B6085A0}" {
@@ -30,26 +44,27 @@ GenericEntity {
    Mass 0.05
   }
   SCR_ConsumableItemComponent "{2653D577DE088EEA}" {
-   m_bCanBeHeld 0
+   m_eAnimVariable MAP
+   m_bVisibleEquipped 1
   }
   ActionsManagerComponent "{D6764B840A3EEF78}" {
    ActionContexts {
-    UserActionContext "{8EA68ECBCC0615F2}" {
-     UIInfo SCR_ActionUIInfo "{CE63C609EAEC189C}" {
-      Name "Sativa Seeds"
+    UserActionContext "{6A70D4D864729EC3}" {
+     ContextName "default"
+     Position PointInfo "{6A70D4D858404746}" {
      }
-     ContextName "ItemContext"
-     Position PointInfo "{87AB2D20DE6C6A41}" {
-     }
+     Radius 0.2
+     LineOfSightCheck 1
     }
    }
    additionalActions {
-    GW_PickUpAction "{97D8382A6690F528}" {
+    SCR_PickUpItemAction "{6A70D4DBF8013CB9}" {
      ParentContextList {
-      "ItemContext"
+      "default"
      }
-     UIInfo SCR_ActionUIInfo "{35219CE1922504D9}" {
-      Name "Pick Up"
+     UIInfo SCR_ActionUIInfo "{6A70D4DBF4BF28EB}" {
+      Name "#AR-Inventory_PickUp"
+      m_sIconName "pick-up"
      }
     }
    }

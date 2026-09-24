@@ -11,15 +11,15 @@ GenericEntity {
   }
   SCR_EditableEntityComponent "{48E9488DFA369EE4}" {
    m_UIInfo SCR_UIInfo "{20ED8D3B0007E1BB}" {
-    Name "Cannabis Plant (Sativa, Vegetative)"
-    Description "A Sativa cannabis plant in the vegetative growth stage."
+    Name "#GW-Plant_SativaVeg_Name"
+    Description "#GW-Plant_SativaVeg_Desc"
    }
   }
   ActionsManagerComponent "{CFA5623D3A4C27DE}" {
    ActionContexts {
     UserActionContext "{6BAB3BCBFFB1C15A}" {
      UIInfo SCR_ActionUIInfo "{C144A862B5FC27EB}" {
-      Name "Cannabis Plant"
+      Name "#GW-Context_CannabisPlant"
      }
      ContextName "CheckContext"
      Position PointInfo "{D953C893AE8710A5}" {
@@ -34,13 +34,14 @@ GenericEntity {
      UIInfo SCR_ActionUIInfo "{23BA8E7F66C48C0A}" {
       Name ""
      }
+     "Sort Priority" 1
     }
     GW_UprootAction "{87ED3426B6D3EAC5}" {
      ParentContextList {
       "CheckContext"
      }
      UIInfo SCR_ActionUIInfo "{77D00A2D537AE85D}" {
-      Name "Uproot Plant"
+      Name "#GW-Action_UprootPlant"
      }
      Duration 3
      "Sort Priority" 2

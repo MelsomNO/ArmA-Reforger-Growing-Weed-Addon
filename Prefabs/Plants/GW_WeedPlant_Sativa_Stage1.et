@@ -11,15 +11,15 @@ GenericEntity {
   }
   SCR_EditableEntityComponent "{9BE7372158018EC5}" {
    m_UIInfo SCR_UIInfo "{9AFECF606164485E}" {
-    Name "Cannabis Seedling (Sativa)"
-    Description "A newly planted Sativa seedling."
+    Name "#GW-Plant_SativaSeedling_Name"
+    Description "#GW-Plant_SativaSeedling_Desc"
    }
   }
   ActionsManagerComponent "{1F75FDE0F385D408}" {
    ActionContexts {
     UserActionContext "{C20337F8A6B54FCB}" {
      UIInfo SCR_ActionUIInfo "{9F4BD209072131A0}" {
-      Name "Cannabis Plant"
+      Name "#GW-Context_CannabisPlant"
      }
      ContextName "CheckContext"
      Position PointInfo "{B844A38EF7A7982D}" {
@@ -34,13 +34,14 @@ GenericEntity {
      UIInfo SCR_ActionUIInfo "{BE2AD2E95F04004A}" {
       Name ""
      }
+     "Sort Priority" 1
     }
     GW_UprootAction "{B347BED1CE6E3663}" {
      ParentContextList {
       "CheckContext"
      }
      UIInfo SCR_ActionUIInfo "{6CB5B4626193C1DF}" {
-      Name "Uproot Plant"
+      Name "#GW-Action_UprootPlant"
      }
      Duration 3
      "Sort Priority" 2
