@@ -1,32 +1,52 @@
 // Plants a seedling in a filled pot. Requires:
-//   - A shovel-type item in the character's hands (inherited from GW_ShovelRequiredAction)
-//   - The configured seed item present in the player's inventory
-// On perform: consumes one seed from inventory and swaps the pot for the seedling prefab.
-// Plays the build/dig-down animation (m_iAnimMode 1 default from GW_ToolAnimAction).
-class GW_PlantAction : GW_ShovelRequiredAction
+//   - The configured seed item held in the character's hands (not a shovel, and not merely
+//     carried in inventory -- the matching seed pack must be the item currently in hands)
+// On perform: consumes the held seed and swaps the pot for the seedling prefab.
+//
+// Extends GW_ToolAnimAction (not GW_ShovelRequiredAction) so the tool-animation plumbing
+// stays available -- note the animation played comes from the held item's animation graph,
+// so with a seed pack in hands this no longer plays the shovel dig loop.
+class GW_PlantAction : GW_ToolAnimAction
 {
 	[Attribute("", UIWidgets.ResourceNamePicker, desc: "Seedling prefab spawned in place of the pot on plant complete (typically GW_WeedPlant_*_Stage1.et).", params: "et")]
 	protected ResourceName m_rSeedlingPrefab;
 
-	[Attribute("", UIWidgets.ResourceNamePicker, desc: "Seed item prefab that must be present in the player's inventory. Leave empty to allow planting without a seed requirement.", params: "et")]
+	[Attribute("", UIWidgets.ResourceNamePicker, desc: "Seed item prefab that must be held in the player's hands. Leave empty to allow planting without a seed requirement.", params: "et")]
 	protected ResourceName m_rRequiredSeedItem;
 
-	[Attribute(defvalue: "true", desc: "If true, consume one seed item from the player's inventory on plant complete.")]
+	[Attribute(defvalue: "true", desc: "If true, consume the held seed item on plant complete.")]
 	protected bool m_bConsumeSeed;
+
+	[Attribute(defvalue: "false", desc: "Print what the action sees in the player's hands to the console. Turn on to diagnose a locked action.")]
+	protected bool m_bDebugLog;
 
 	override bool CanBePerformedScript(IEntity user)
 	{
 		if (m_rSeedlingPrefab.IsEmpty())
 			return false;
 
-		// Shovel-in-hands gate from parent
-		if (!super.CanBePerformedScript(user))
-			return false;
-
-		// Seed-in-inventory gate
+		// No seed configured -> no gate
 		if (m_rRequiredSeedItem.IsEmpty())
 			return true;
-		return HasSeedInInventory(user);
+
+		// Seed-in-hands gate
+		IEntity held = GetItemInHands(user);
+
+		if (m_bDebugLog)
+		{
+			string heldName = "<null>";
+			if (held)
+			{
+				EntityPrefabData pd = held.GetPrefabData();
+				if (pd)
+					heldName = pd.GetPrefabName();
+				else
+					heldName = "<no prefab data>";
+			}
+			Print("[GW_PlantAction] in hands: " + heldName + " | required: " + m_rRequiredSeedItem, LogLevel.NORMAL);
+		}
+
+		return IsSeedMatch(held);
 	}
 
 	override void PerformAction(IEntity pOwnerEntity, IEntity pUserEntity)
@@ -38,7 +58,7 @@ class GW_PlantAction : GW_ShovelRequiredAction
 			return;
 
 		if (m_bConsumeSeed && !m_rRequiredSeedItem.IsEmpty())
-			ConsumeOneSeed(pUserEntity);
+			ConsumeHeldSeed(pUserEntity);
 
 		Resource res = Resource.Load(m_rSeedlingPrefab);
 		if (!res.IsValid())
@@ -58,55 +78,100 @@ class GW_PlantAction : GW_ShovelRequiredAction
 		SCR_EntityHelper.DeleteEntityAndChildren(pOwnerEntity);
 	}
 
-	protected bool HasSeedInInventory(IEntity user)
+	// Item currently in the character's hands. A seed pack is held through
+	// SCR_ConsumableItemComponent, so it can surface via the gadget manager, the character
+	// controller, or (for weapons) the weapon manager -- try all three.
+	protected IEntity GetItemInHands(IEntity user)
 	{
 		if (!user)
-			return false;
+			return null;
 
-		SCR_InventoryStorageManagerComponent invMgr = SCR_InventoryStorageManagerComponent.Cast(user.FindComponent(SCR_InventoryStorageManagerComponent));
-		if (!invMgr)
-			return false;
-
-		array<IEntity> items = {};
-		invMgr.GetItems(items);
-
-		foreach (IEntity item : items)
+		SCR_GadgetManagerComponent gm = SCR_GadgetManagerComponent.GetGadgetManager(user);
+		if (gm)
 		{
-			if (IsSeedMatch(item))
-				return true;
+			IEntity gadget = gm.GetHeldGadget();
+			if (gadget)
+				return gadget;
 		}
-		return false;
+
+		ChimeraCharacter character = ChimeraCharacter.Cast(user);
+		if (character)
+		{
+			CharacterControllerComponent charController = character.GetCharacterController();
+			if (charController)
+			{
+				IEntity inHands = charController.GetCurrentItemInHands();
+				if (inHands)
+					return inHands;
+			}
+		}
+
+		BaseWeaponManagerComponent wm = BaseWeaponManagerComponent.Cast(user.FindComponent(BaseWeaponManagerComponent));
+		if (wm)
+		{
+			BaseWeaponComponent weapon = wm.GetCurrent();
+			if (weapon)
+				return weapon.GetOwner();
+		}
+
+		return null;
 	}
 
+	// Tolerant prefab comparison: GetPrefabName() and the configured ResourceName should both
+	// read "{GUID}Path/To/Prefab.et", but match on either half alone so a differing GUID
+	// prefix or path spelling does not silently lock the action.
 	protected bool IsSeedMatch(IEntity item)
 	{
 		if (!item)
 			return false;
+
 		EntityPrefabData prefabData = item.GetPrefabData();
 		if (!prefabData)
 			return false;
-		return prefabData.GetPrefabName() == m_rRequiredSeedItem;
+
+		string held = prefabData.GetPrefabName();
+		string required = m_rRequiredSeedItem;
+
+		if (held == required)
+			return true;
+
+		string heldGuid = SplitGuid(held);
+		if (!heldGuid.IsEmpty() && heldGuid == SplitGuid(required))
+			return true;
+
+		string heldPath = SplitPath(held);
+		return !heldPath.IsEmpty() && heldPath == SplitPath(required);
 	}
 
-	protected void ConsumeOneSeed(IEntity user)
+	// "{GUID}Path.et" -> "GUID" (empty when there is no GUID prefix)
+	protected string SplitGuid(string resName)
 	{
-		if (!user)
+		int close = resName.IndexOf("}");
+		if (close <= 0 || resName.IndexOf("{") != 0)
+			return "";
+		return resName.Substring(1, close - 1);
+	}
+
+	// "{GUID}Path.et" -> "Path.et"
+	protected string SplitPath(string resName)
+	{
+		int close = resName.IndexOf("}");
+		if (close < 0)
+			return resName;
+		return resName.Substring(close + 1, resName.Length() - close - 1);
+	}
+
+	protected void ConsumeHeldSeed(IEntity user)
+	{
+		IEntity held = GetItemInHands(user);
+		if (!IsSeedMatch(held))
 			return;
 
 		SCR_InventoryStorageManagerComponent invMgr = SCR_InventoryStorageManagerComponent.Cast(user.FindComponent(SCR_InventoryStorageManagerComponent));
-		if (!invMgr)
+		if (invMgr && invMgr.TryDeleteItem(held))
 			return;
 
-		array<IEntity> items = {};
-		invMgr.GetItems(items);
-
-		foreach (IEntity item : items)
-		{
-			if (IsSeedMatch(item))
-			{
-				invMgr.TryDeleteItem(item);
-				return;
-			}
-		}
+		// Fallback: the item may not be tracked by the storage manager while in hands
+		SCR_EntityHelper.DeleteEntityAndChildren(held);
 	}
 }

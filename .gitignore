@@ -23,3 +23,13 @@ Scripts/WorkbenchGame/EnfusionMCP/
 *.fbx
 *.blend
 Models/**/_workfiles/
+
+# Art assets — not needed by contributors; the Workshop package ships the
+# compiled versions. Models/ holds .xob/.emat/.meta, Textures/ the source
+# PNGs and their import settings.
+Models/
+Textures/
+
+# Workbench project file — local to each checkout (mod GUID, dependencies,
+# resource registrations).
+*.gproj
