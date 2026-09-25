@@ -47,11 +47,11 @@ GenericEntity {
      m_iAnimMode 1
      m_rFilledPotPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
     }
-    PickupAction "{6A70D4DE8F85DD62}" {
+    SCR_PickUpItemAction "{6A70D4DE8F85DD62}" {
      ParentContextList {
       "PotContext"
      }
-     UIInfo SCR_ActionUIInfo "{6A70D4DF6DE01F1D}" {
+     UIInfo SCR_ActionContextUIInfo "{6A70D4DF6DE01F1D}" {
       Name "#AR-Inventory_PickUp"
       m_sIconName "pick-up"
      }

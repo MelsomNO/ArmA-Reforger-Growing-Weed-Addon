@@ -6,6 +6,7 @@ A self-contained cannabis growing system for Arma Reforger. Plant seeds, tend th
 
 - **Two species with distinct visuals** — Sativa (tall, lanky, green buds) and Indica (shorter, bushier, purple-tinged buds), each with its own seed item.
 - **Full plant-to-harvest loop** — Empty pot → fill with dirt → plant a seed → wait through growth stages → harvest mature buds → replant. Each step is a proper in-world action, not a menu.
+- **Smokeable buds** — Roll a harvested bud into a joint in hand, then smoke it. Both steps are in-hand inspection actions.
 - **In-game time growth** — Plants advance through three stages using the game's day/night clock. Fast-forwarding time in Game Master makes plants grow instantly; slowing the day stretches the cycle.
 - **Live progress check** — Look at any growing plant to see its exact growth percentage; a "Check Growth" action pops a hint with remaining in-game hours.
 - **Uproot with shovel** — Any stage can be removed with the shovel demolition animation; the plant is destroyed.
@@ -21,6 +22,8 @@ A self-contained cannabis growing system for Arma Reforger. Plant seeds, tend th
 4. Check progress at any time with **Check Growth**.
 5. When mature, **Harvest Cannabis** yields 2–4 species-specific cannabis tops into your inventory; the plant is replaced by a fresh filled pot ready for the next seed.
 6. **Uproot Plant** at any stage removes the plant entirely (destroys the pot too).
+7. Take a cannabis top in hands and inspect it, then use **Roll Joint** — the bud is consumed and a matching **Sativa Joint** / **Indica Joint** goes into your inventory.
+8. Take the joint in hands, inspect it, and use **Smoke Joint** — the character drops into the game's smoking emote and the joint is consumed when it ends. Standing only.
 
 ## Tuning
 

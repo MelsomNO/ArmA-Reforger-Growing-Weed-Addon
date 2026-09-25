@@ -316,5 +316,85 @@ StringTable {
    Author "andre"
    LastChanged "andre"
   }
+  CustomStringTableItem "{A39DF3596CE324E0}" {
+   Id "GW-Hint_NeedSeedInHand"
+   Target_en_us "Requires the matching seed pack in hand"
+   Target_es_es "Requiere el paquete de semillas correspondiente en la mano"
+   Status DEVELOPMENT_DONE
+   Modified 1785814543
+   Author "andre"
+   LastChanged "andre"
+   SourceFile "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
+  }
+  CustomStringTableItem "{0F087B92026B618F}" {
+   Id "GW-Hint_NeedShovel"
+   Target_en_us "Requires a shovel in hand"
+   Target_es_es "Requiere una pala en la mano"
+   Status DEVELOPMENT_DONE
+   Modified 1785814543
+   Author "andre"
+   LastChanged "andre"
+   SourceFile "{776EA4A47C011B5E}Prefabs/Items/GW_PotItem_Empty.et"
+  }
+  CustomStringTableItem "{6A9C21B004E31001}" {
+   Id "GW-Action_RollJoint"
+   Target_en_us "Roll Joint"
+   Target_es_es "Liar un porro"
+   Status DEVELOPMENT_DONE
+   Modified 1790642000
+   Author "andre"
+   LastChanged "andre"
+   SourceFile "{6A9C20A11B4C5D00}Prefabs/Items/GW_Joint_Sativa.et"
+  }
+  CustomStringTableItem "{6A9C21B004E31002}" {
+   Id "GW-Action_SmokeJoint"
+   Target_en_us "Smoke Joint"
+   Target_es_es "Fumar porro"
+   Status DEVELOPMENT_DONE
+   Modified 1790642000
+   Author "andre"
+   LastChanged "andre"
+   SourceFile "{6A9C20A11B4C5D00}Prefabs/Items/GW_Joint_Sativa.et"
+  }
+  CustomStringTableItem "{6A9C21B004E31003}" {
+   Id "GW-Item_IndicaJoint_Name"
+   Target_en_us "Indica Joint"
+   Target_es_es "Porro Indica"
+   Status DEVELOPMENT_DONE
+   Modified 1790642000
+   Author "andre"
+   LastChanged "andre"
+   SourceFile "{6A9C20A21B4C5D00}Prefabs/Items/GW_Joint_Indica.et"
+  }
+  CustomStringTableItem "{6A9C21B004E31004}" {
+   Id "GW-Item_IndicaJoint_Desc"
+   Target_en_us "A hand-rolled Indica joint."
+   Target_es_es "Un porro de Indica liado a mano."
+   Status DEVELOPMENT_DONE
+   Modified 1790642000
+   Author "andre"
+   LastChanged "andre"
+   SourceFile "{6A9C20A21B4C5D00}Prefabs/Items/GW_Joint_Indica.et"
+  }
+  CustomStringTableItem "{6A9C21B004E31005}" {
+   Id "GW-Item_SativaJoint_Name"
+   Target_en_us "Sativa Joint"
+   Target_es_es "Porro Sativa"
+   Status DEVELOPMENT_DONE
+   Modified 1790642000
+   Author "andre"
+   LastChanged "andre"
+   SourceFile "{6A9C20A11B4C5D00}Prefabs/Items/GW_Joint_Sativa.et"
+  }
+  CustomStringTableItem "{6A9C21B004E31006}" {
+   Id "GW-Item_SativaJoint_Desc"
+   Target_en_us "A hand-rolled Sativa joint."
+   Target_es_es "Un porro de Sativa liado a mano."
+   Status DEVELOPMENT_DONE
+   Modified 1790642000
+   Author "andre"
+   LastChanged "andre"
+   SourceFile "{6A9C20A11B4C5D00}Prefabs/Items/GW_Joint_Sativa.et"
+  }
  }
 }

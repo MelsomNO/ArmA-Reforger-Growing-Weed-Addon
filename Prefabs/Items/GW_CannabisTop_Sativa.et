@@ -9,6 +9,8 @@ GenericEntity {
     }
     ItemPhysAttributes ItemPhysicalAttributes "{83913E1324DB464E}" {
      Weight 0.005
+     SizeSetupStrategy Manual
+     ItemVolume 1
     }
     ItemAnimationAttributes ItemAnimationAttributes "{6A70FD7CE88C3909}" {
      AnimationInstance "{4FCBEA45CAEBC9C0}anims/workspaces/player/player_main_1h.asi"
@@ -21,6 +23,7 @@ GenericEntity {
       }
      }
      HandAdditiveRotation -110 0 90
+     AllowInspection 1
     }
     CustomAttributes {
      PreviewRenderAttributes "{999514695E4E6581}" {
@@ -62,6 +65,20 @@ GenericEntity {
       Name "#AR-Inventory_PickUp"
       m_sIconName "pick-up"
      }
+    }
+    GW_RollJointAction "{6A9C20A31B4C5D01}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionUIInfo "{6A9C20A31B4C5D02}" {
+      Name "#GW-Action_RollJoint"
+     }
+     Duration 3
+     m_rResultPrefab "{6A9C20A11B4C5D00}Prefabs/Items/GW_Joint_Sativa.et"
+     m_iResultCount 1
+     m_bConsumeSource 1
+     m_bRequireInHands 1
+     m_bEquipResult 1
     }
    }
   }

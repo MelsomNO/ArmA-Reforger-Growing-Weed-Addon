@@ -21,6 +21,10 @@ Key shape follows vanilla's convention (`#AR-Item_Morphine_Name`), with `GW` as 
 | `GW-Item_PotEmpty_Desc` | A pot for your plants. | Una maceta para tus plantas. |
 | `GW-Item_PotFilled_Name` | Filled Plant Pot | Maceta con tierra |
 | `GW-Item_PotFilled_Desc` | A dirt-filled pot ready for a cannabis seed. | Una maceta con tierra lista para una semilla de cannabis. |
+| `GW-Item_IndicaJoint_Name` | Indica Joint | Porro Indica |
+| `GW-Item_IndicaJoint_Desc` | A hand-rolled Indica joint. | Un porro de Indica liado a mano. |
+| `GW-Item_SativaJoint_Name` | Sativa Joint | Porro Sativa |
+| `GW-Item_SativaJoint_Desc` | A hand-rolled Sativa joint. | Un porro de Sativa liado a mano. |
 
 ## Plants
 
@@ -57,6 +61,18 @@ Key shape follows vanilla's convention (`#AR-Item_Morphine_Name`), with `GW` as 
 | `GW-Action_UprootPlant` | Uproot Plant | Arrancar planta |
 | `GW-Action_HarvestCannabis` | Harvest Cannabis | Cosechar cannabis |
 | `GW-Action_EmptyPot` | Empty Pot | Vaciar maceta |
+| `GW-Action_RollJoint` | Roll Joint | Liar un porro |
+| `GW-Action_SmokeJoint` | Smoke Joint | Fumar porro |
+
+## Requirement hints
+
+Shown in place of the action label while the required item is not in hands, so the
+player is told why an action is greyed out.
+
+| ID | en_us | es_es |
+|---|---|---|
+| `GW-Hint_NeedSeedInHand` | Requires the matching seed pack in hand | Requiere el paquete de semillas correspondiente en la mano |
+| `GW-Hint_NeedShovel` | Requires a shovel in hand | Requiere una pala en la mano |
 
 ## Script-built strings
 
