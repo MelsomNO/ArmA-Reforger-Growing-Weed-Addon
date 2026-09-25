@@ -1,11 +1,11 @@
 // "Smoke Joint" -- plays an item-use animation on the character while the action is held, then
 // consumes the joint.
 //
-// Inherits the animation plumbing from GW_ToolAnimAction (see docs/DIGGING_ANIMATION.md): it
-// binds a command on the character animation graph and calls TryUseItemOverrideParams with the
-// held joint as the item entity, so the clip that actually plays comes from the animation graph
-// attached to the joint prefab (InventoryItemComponent > ItemAnimationAttributes >
-// AnimationAttachments > AnimGraph).
+// Inherits the animation plumbing from GW_ToolAnimAction (see the "Digging Animation" write-up in
+// the project docs): it binds a command on the character animation graph and calls
+// TryUseItemOverrideParams with the held joint as the item entity, so the clip that actually plays
+// comes from the animation graph attached to the joint prefab (InventoryItemComponent >
+// ItemAnimationAttributes > AnimationAttachments > AnimGraph).
 //
 // Vanilla has no player smoking animation: the p_smoking_* clips under anims/anm/NPC/male/smoking
 // are only bound into the narrative-NPC graph, not into player_main. Until the mod ships its own

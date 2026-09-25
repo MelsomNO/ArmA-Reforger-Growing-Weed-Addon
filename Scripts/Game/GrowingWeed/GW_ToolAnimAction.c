@@ -1,6 +1,7 @@
 // Base class that drives a tool animation on the character while the action is held.
-// Mechanism (per docs/DIGGING_ANIMATION.md): binds CMD_Item_Action on the character animation
-// graph, then calls TryUseItemOverrideParams with the held gadget as the tool entity.
+// Mechanism (see the "Digging Animation" write-up in the project docs): binds CMD_Item_Action on
+// the character animation graph, then calls TryUseItemOverrideParams with the held gadget as the
+// tool entity.
 class GW_ToolAnimAction : ScriptedUserAction
 {
 	[Attribute(defvalue: "CMD_Item_Action", desc: "Command name bound on the character animation graph.")]
