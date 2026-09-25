@@ -53,6 +53,27 @@ class GW_EmoteScheduler
 		if (!user)
 			return;
 
+		// MULTIPLAYER: only the machine that controls the smoker may start the emote.
+		//
+		// Two things conspire without this guard. A user action's OnActionStart fires on every
+		// machine that observes the action, not just the performer's, and SCR_BaseRadialCommand's
+		// own documentation warns that Execute "is right now broadcasted to all clients, so if the
+		// command is intended only for specific clients, it needs to be filtered inside". The
+		// filtering the command does is against the playerID it is handed -- and passing
+		// SCR_PlayerController.GetLocalPlayerId() makes that check pass trivially wherever it runs.
+		// The result was every player on the server lighting up when one person smoked.
+		//
+		// Gating on the locally controlled entity fixes both halves: the emote is only started once,
+		// on the smoker's own machine, and there GetLocalPlayerId() really is the smoker's id, so
+		// any filtering further down the vanilla path compares the right values.
+		if (SCR_PlayerController.GetLocalControlledEntity() != user)
+		{
+			if (debugLog)
+				Print("[GW_EmoteScheduler] not this machine's player -- emote skipped", LogLevel.NORMAL);
+
+			return;
+		}
+
 		SCR_BaseRadialCommand command = ResolveCommand(config, commandName, debugLog);
 		if (!command)
 			return;

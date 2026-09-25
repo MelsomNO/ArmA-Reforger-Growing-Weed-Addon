@@ -70,6 +70,12 @@ class GW_SmokeCommandAction : ScriptedUserAction
 	{
 		super.OnActionStart(pUserEntity);
 
+		// OnActionStart runs on every machine observing the action, so bail out early on the ones
+		// that are not smoking. GW_EmoteScheduler repeats this check when the timer fires; this one
+		// just avoids queueing a timer that would do nothing.
+		if (SCR_PlayerController.GetLocalControlledEntity() != pUserEntity)
+			return;
+
 		float delay = GetActionDuration() * 1000 + m_fEmoteDelayMs;
 		if (delay < m_fEmoteDelayMs)
 			delay = m_fEmoteDelayMs;
