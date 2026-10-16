@@ -29,11 +29,31 @@ A self-contained cannabis growing system for Arma Reforger. Plant seeds, tend th
 
 Everything is exposed as prefab attributes — no code edits needed:
 
-- **Growth duration** — `m_fGrowInGameHours` on each stage's `GW_GrowthComponent` (defaults: 6 h → Stage 2, 8 h → Stage 3).
+- **Growth duration** — `m_fGrowInGameHours` on each stage's `GW_GrowthComponent` (defaults: 6 h → Stage 2, 8 h → Stage 3). Servers can override this without touching prefabs; see [Server configuration](#server-configuration).
 - **Harvest yield range** — `m_iYieldMin` / `m_iYieldMax` on the Stage 3 prefab's `GW_HarvestAction` (defaults: 2–4).
 - **Species-specific yields** — `m_rYieldPrefab` on each Stage 3 `GW_HarvestAction` points to the matching `GW_CannabisTop_*` item.
 - **Shovel matching** — `m_sShovelNamePatterns` on plant/uproot/fill actions; semicolon-separated substring list (default `shovel;etool;entrench;spade`).
 - **Action durations** — `Duration` on each user action (defaults: 3 s for shovel actions, 2 s for harvest).
+
+## Server configuration
+
+Server owners can change how fast plants grow without editing the mod. On first start the server writes `GrowingWeed/GrowthConfig.json` into its profile folder (the folder passed with `-profile`):
+
+```json
+{
+	"growthSpeedMultiplier": 1.0,
+	"stage1Hours": 6.0,
+	"stage2Hours": 8.0
+}
+```
+
+| Key | Default | What it does |
+| --- | --- | --- |
+| `growthSpeedMultiplier` | `1.0` | Divides every stage's duration. `2.0` grows twice as fast, `0.5` half as fast. Must be above 0. |
+| `stage1Hours` | `6.0` | In-game hours from seedling to young plant. `0` or less uses the prefab value. |
+| `stage2Hours` | `8.0` | In-game hours from young plant to mature plant. `0` or less uses the prefab value. |
+
+The defaults match the shipped prefabs, so an untouched file changes nothing. Values apply to both Sativa and Indica. Edit the file while the server is stopped; it is read once when the first plant spawns. If the file can't be parsed, the server logs a warning and uses the defaults. Clients receive the resulting durations from the server, so the growth percentage players see always matches.
 
 ## Dependencies
 
