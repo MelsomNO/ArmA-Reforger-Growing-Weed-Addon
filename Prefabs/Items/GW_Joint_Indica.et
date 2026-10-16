@@ -1,0 +1,90 @@
+GenericEntity {
+ ID "6A9C20A21B4C5D02"
+ components {
+  InventoryItemComponent "{6A9C20A21B4C5D03}" {
+   Attributes SCR_ItemAttributeCollection "{6A9C20A21B4C5D04}" {
+    ItemDisplayName SCR_InventoryUIInfo "{6A9C20A21B4C5D05}" {
+     Name "#GW-Item_IndicaJoint_Name"
+     Description "#GW-Item_IndicaJoint_Desc"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{6A9C20A21B4C5D06}" {
+     Weight 0.003
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{6A9C20A21B4C5D07}" {
+     AnimationInstance "{4FCBEA45CAEBC9C0}anims/workspaces/player/player_main_1h.asi"
+     AnimationIKPose "{3E5C93E85F05C6B5}Assets/Weapons/Grenades/RGD5/anims/anm/p_rgd5_ik.anm"
+     AnimationAttachments {
+      AnimationAttachmentInfo "{6A9C20A21B4C5D08}" {
+       AnimGraph "{25B5CD66792F60F4}Assets/Items/Medicine/Workspaces/MorphineInjection_01.agr"
+       AnimInstance "{B900F61FD4D7F1DA}Assets/Items/Medicine/Workspaces/morphine_injection_player.asi"
+       BindingName "Gadget"
+      }
+     }
+     HandAdditiveRotation 0 0 90
+     AllowInspection 1
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{6A9C20A21B4C5D09}" {
+      CameraPreset Left
+      CameraOrbitAngles 1 0 0
+      CameraDistanceToItem 0.07
+     }
+    }
+    CommonItemType "NONE"
+    m_Size SLOT_1x1
+    m_SlotType SLOT_ANY
+   }
+  }
+  MeshObject "{6A9C20A21B4C5D0A}" {
+   Object "{6A9C30B011000004}Models/Items/Joint.xob"
+  }
+  RigidBody "{6A9C20A21B4C5D0B}" {
+   Mass 0.01
+  }
+  SCR_ConsumableItemComponent "{6A9C20A21B4C5D0C}" {
+   m_eAnimVariable ADRIANOV
+   m_bVisibleEquipped 1
+  }
+  ActionsManagerComponent "{6A9C20A21B4C5D0D}" {
+   ActionContexts {
+    UserActionContext "{6A9C20A21B4C5D0E}" {
+     ContextName "default"
+     Position PointInfo "{6A9C20A21B4C5D0F}" {
+     }
+     Radius 0.2
+     LineOfSightCheck 1
+    }
+   }
+   additionalActions {
+    SCR_PickUpItemAction "{6A9C20A21B4C5D10}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionContextUIInfo "{6A9C20A21B4C5D11}" {
+      Name "#AR-Inventory_PickUp"
+      m_sIconName "pick-up"
+     }
+    }
+    GW_SmokeCommandAction "{6A9C20A21B4C5D12}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionUIInfo "{6A9C20A21B4C5D13}" {
+      Name "#GW-Action_SmokeJoint"
+     }
+     Duration 1
+     m_rEmoteConfig "{6A9C50D013000000}Configs/Commanding/Emotes/GW_Emote_SmokeJoint.conf"
+     m_sEmoteCommandName "Emote_Smoke"
+     m_bConsumeJoint 1
+     m_bRequireInHands 1
+     m_fEmoteDelayMs 250
+     m_bDebugLog 0
+    }
+   }
+  }
+  RplComponent "{6A9C20A21B4C5D14}" {
+   "Parent Node From Parent Entity" 0
+  }
+ }
+ coords 0 0 0
+}

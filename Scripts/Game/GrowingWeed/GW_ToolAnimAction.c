@@ -1,6 +1,7 @@
 // Base class that drives a tool animation on the character while the action is held.
-// Mechanism (per docs/DIGGING_ANIMATION.md): binds CMD_Item_Action on the character animation
-// graph, then calls TryUseItemOverrideParams with the held gadget as the tool entity.
+// Mechanism (see the "Digging Animation" write-up in the project docs): binds CMD_Item_Action on
+// the character animation graph, then calls TryUseItemOverrideParams with the held gadget as the
+// tool entity.
 class GW_ToolAnimAction : ScriptedUserAction
 {
 	[Attribute(defvalue: "CMD_Item_Action", desc: "Command name bound on the character animation graph.")]
@@ -8,6 +9,9 @@ class GW_ToolAnimAction : ScriptedUserAction
 
 	[Attribute(defvalue: "1", desc: "Command int arg: 1 = build/dig-down loop, 2 = demolition/dig-out loop.")]
 	protected int m_iAnimMode;
+
+	[Attribute(defvalue: "false", desc: "Print what the animation call saw -- held item, command name, bound command id, and whether the engine accepted the item use. Turn on to diagnose an action that runs but plays no animation.")]
+	protected bool m_bDebugAnimLog;
 
 	protected CharacterAnimationComponent m_AnimComponentInUse;
 
@@ -53,11 +57,21 @@ class GW_ToolAnimAction : ScriptedUserAction
 
 		IEntity tool = GetHeldTool(pUserEntity);
 		if (!tool)
+		{
+			DebugLog("no item in hands -- nothing to animate");
 			return;
+		}
 
+		// BindCommand only resolves commands the held item's animation graph actually declares.
+		// A graph that does not declare m_sAnimCommand returns < 0 and the character stays idle:
+		// e.g. the canteen graph declares only CMD_Item_Action, the morphine graph only
+		// CMD_HealSelf / CMD_HealOther / CMD_Revive.
 		int commandId = animComponent.BindCommand(m_sAnimCommand);
 		if (commandId < 0)
+		{
+			DebugLog("BindCommand(\"" + m_sAnimCommand + "\") failed -- the held item's animation graph does not declare that command");
 			return;
+		}
 
 		ItemUseParameters params = new ItemUseParameters();
 		params.SetEntity(tool);
@@ -66,7 +80,17 @@ class GW_ToolAnimAction : ScriptedUserAction
 		params.SetCommandID(commandId);
 		params.SetCommandIntArg(m_iAnimMode);
 
-		charController.TryUseItemOverrideParams(params);
+		bool accepted = charController.TryUseItemOverrideParams(params);
+		if (m_bDebugAnimLog)
+		{
+			string toolName = "<no prefab data>";
+			EntityPrefabData prefabData = tool.GetPrefabData();
+			if (prefabData)
+				toolName = prefabData.GetPrefabName();
+
+			DebugLog("item=" + toolName + " command=" + m_sAnimCommand + " id=" + commandId.ToString() + " intArg=" + m_iAnimMode.ToString() + " accepted=" + accepted.ToString());
+		}
+
 		m_AnimComponentInUse = animComponent;
 	}
 
@@ -79,6 +103,12 @@ class GW_ToolAnimAction : ScriptedUserAction
 		if (handler)
 			handler.FinishItemUse(true);
 		m_AnimComponentInUse = null;
+	}
+
+	protected void DebugLog(string message)
+	{
+		if (m_bDebugAnimLog)
+			Print("[GW_ToolAnimAction] " + message, LogLevel.NORMAL);
 	}
 
 	protected IEntity GetHeldTool(IEntity user)

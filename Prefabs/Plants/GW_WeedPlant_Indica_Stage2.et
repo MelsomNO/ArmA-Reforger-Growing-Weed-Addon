@@ -3,6 +3,7 @@ GenericEntity {
  components {
   GW_GrowthComponent "{0BDED876AFDF45D5}" {
    m_fGrowInGameHours 8
+   m_iConfigStage 2
    m_rNextStagePrefab "{4DBB2CDBA9E56751}Prefabs/Plants/GW_WeedPlant_Indica_Stage3.et"
    m_bDebugLogs 0
   }
@@ -11,15 +12,15 @@ GenericEntity {
   }
   SCR_EditableEntityComponent "{F8FD6C5CD84665CE}" {
    m_UIInfo SCR_UIInfo "{8CF04C8692CF6E68}" {
-    Name "Cannabis Plant (Indica, Vegetative)"
-    Description "An Indica cannabis plant in the vegetative growth stage."
+    Name "#GW-Plant_IndicaVeg_Name"
+    Description "#GW-Plant_IndicaVeg_Desc"
    }
   }
   ActionsManagerComponent "{776FE34F60FE0872}" {
    ActionContexts {
     UserActionContext "{2393ACE551D32E0E}" {
      UIInfo SCR_ActionUIInfo "{A940638A9FA2615C}" {
-      Name "Cannabis Plant"
+      Name "#GW-Context_CannabisPlant"
      }
      ContextName "CheckContext"
      Position PointInfo "{D5F4A416F746A665}" {
@@ -41,9 +42,10 @@ GenericEntity {
       "CheckContext"
      }
      UIInfo SCR_ActionUIInfo "{11DEFD197B123FA0}" {
-      Name "Uproot Plant"
+      Name "#GW-Action_UprootPlant"
      }
      Duration 3
+     "Sort Priority" 2
      m_iAnimMode 2
      m_rReplacementPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
     }

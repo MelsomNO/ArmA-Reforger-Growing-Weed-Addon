@@ -3,6 +3,7 @@ GenericEntity {
  components {
   GW_GrowthComponent "{E9DF3B5C06DAF917}" {
    m_fGrowInGameHours 6
+   m_iConfigStage 1
    m_rNextStagePrefab "{38A61F701850C3D9}Prefabs/Plants/GW_WeedPlant_Indica_Stage2.et"
    m_bDebugLogs 0
   }
@@ -11,15 +12,15 @@ GenericEntity {
   }
   SCR_EditableEntityComponent "{B3521BC31C33D4A2}" {
    m_UIInfo SCR_UIInfo "{A83409D3335BFA5E}" {
-    Name "Cannabis Seedling (Indica)"
-    Description "A newly planted Indica seedling."
+    Name "#GW-Plant_IndicaSeedling_Name"
+    Description "#GW-Plant_IndicaSeedling_Desc"
    }
   }
   ActionsManagerComponent "{8E2194F1A9E011B5}" {
    ActionContexts {
     UserActionContext "{DDDCB3B87A216BB0}" {
      UIInfo SCR_ActionUIInfo "{214D0B32D3740D45}" {
-      Name "Cannabis Plant"
+      Name "#GW-Context_CannabisPlant"
      }
      ContextName "CheckContext"
      Position PointInfo "{A3184792D777374C}" {
@@ -34,16 +35,16 @@ GenericEntity {
      UIInfo SCR_ActionUIInfo "{E3C395EDE80FF767}" {
       Name ""
      }
-     "Sort Priority" 1
     }
     GW_UprootAction "{4A154B09A8AD7FC4}" {
      ParentContextList {
       "CheckContext"
      }
      UIInfo SCR_ActionUIInfo "{3DC8441D24E4A804}" {
-      Name "Uproot Plant"
+      Name "#GW-Action_UprootPlant"
      }
      Duration 3
+     "Sort Priority" 2
      m_iAnimMode 2
      m_rReplacementPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
     }

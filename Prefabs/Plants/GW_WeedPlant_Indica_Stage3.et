@@ -11,15 +11,15 @@ GenericEntity {
   }
   SCR_EditableEntityComponent "{ADA52C049D46EDFD}" {
    m_UIInfo SCR_UIInfo "{F98C4C3D7D61CFA9}" {
-    Name "Cannabis Plant (Indica, Mature)"
-    Description "A mature Indica cannabis plant, ready to harvest."
+    Name "#GW-Plant_IndicaMature_Name"
+    Description "#GW-Plant_IndicaMature_Desc"
    }
   }
   ActionsManagerComponent "{7E877F81CA520D05}" {
    ActionContexts {
     UserActionContext "{724E6F2016819D04}" {
      UIInfo SCR_ActionUIInfo "{598A5F43FF14DAC0}" {
-      Name "Cannabis Plant"
+      Name "#GW-Context_CannabisPlant"
      }
      ContextName "CheckContext"
      Position PointInfo "{BF6B66E81615BBAF}" {
@@ -41,10 +41,10 @@ GenericEntity {
       "CheckContext"
      }
      UIInfo SCR_ActionUIInfo "{1530F02D9BE08B91}" {
-      Name "Uproot Plant"
+      Name "#GW-Action_UprootPlant"
      }
      Duration 3
-     m_iAnimMode 2
+     "Sort Priority" 2
      m_rReplacementPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
     }
     GW_HarvestAction "{672B89F1B52FF536}" {
@@ -52,7 +52,7 @@ GenericEntity {
       "CheckContext"
      }
      UIInfo SCR_ActionUIInfo "{A700FD78C5AEB667}" {
-      Name "Harvest Cannabis"
+      Name "#GW-Action_HarvestCannabis"
      }
      Duration 2
      m_rYieldPrefab "{850B60FDE623798B}Prefabs/Items/GW_CannabisTop_Indica.et"

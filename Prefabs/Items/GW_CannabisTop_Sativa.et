@@ -4,11 +4,13 @@ GenericEntity {
   InventoryItemComponent "{2BCC9A30E74EC2B6}" {
    Attributes SCR_ItemAttributeCollection "{3B53B34D3E9B2683}" {
     ItemDisplayName SCR_InventoryUIInfo "{B486CFC91F4880BC}" {
-     Name "Sativa Bud"
-     Description "A Sativa Cannabis Nugget."
+     Name "#GW-Item_SativaBud_Name"
+     Description "#GW-Item_SativaBud_Desc"
     }
     ItemPhysAttributes ItemPhysicalAttributes "{83913E1324DB464E}" {
      Weight 0.005
+     SizeSetupStrategy Manual
+     ItemVolume 1
     }
     ItemAnimationAttributes ItemAnimationAttributes "{6A70FD7CE88C3909}" {
      AnimationInstance "{4FCBEA45CAEBC9C0}anims/workspaces/player/player_main_1h.asi"
@@ -20,8 +22,8 @@ GenericEntity {
        BindingName "Gadget"
       }
      }
-     HandAdditiveRotation -104 0 90
-     HandAdditiveTranslation 0 0.01 0
+     HandAdditiveRotation -110 0 90
+     AllowInspection 1
     }
     CustomAttributes {
      PreviewRenderAttributes "{999514695E4E6581}" {
@@ -31,6 +33,7 @@ GenericEntity {
     }
     CommonItemType "NONE"
     m_Size SLOT_1x1
+    m_SlotType SLOT_ANY
    }
   }
   MeshObject "{270B54FAC093B9EB}" {
@@ -63,11 +66,26 @@ GenericEntity {
       m_sIconName "pick-up"
      }
     }
+    GW_RollJointAction "{6A9C20A31B4C5D01}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionUIInfo "{6A9C20A31B4C5D02}" {
+      Name "#GW-Action_RollJoint"
+     }
+     Duration 3
+     m_rResultPrefab "{6A9C20A11B4C5D00}Prefabs/Items/GW_Joint_Sativa.et"
+     m_iResultCount 1
+     m_bConsumeSource 1
+     m_bRequireInHands 1
+     m_bEquipResult 1
+    }
    }
   }
   RplComponent "{44187BEAA9A53F0B}" {
    "Parent Node From Parent Entity" 0
   }
  }
- scale 3
+ coords 0 0 0
+ scale 4
 }

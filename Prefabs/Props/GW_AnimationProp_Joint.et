@@ -1,0 +1,8 @@
+GenericEntity : "{41382F04EAC2F21D}Prefabs/Props/Civilian/Cigar/Cigar_base.et" {
+ ID "69B4E2A6E01158C8"
+ components {
+  MeshObject "{69B4E2A6D81D9B20}" {
+   Object "{6A9C30B011000004}Models/Items/Joint.xob"
+  }
+ }
+}

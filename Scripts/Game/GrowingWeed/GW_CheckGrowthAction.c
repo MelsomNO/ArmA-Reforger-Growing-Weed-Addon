@@ -18,9 +18,9 @@ class GW_CheckGrowthAction : ScriptedUserAction
 
 		float remaining = gc.GetRemainingInGameHours();
 		if (remaining <= 0)
-			outName = "Growth: fully grown";
+			outName = WidgetManager.Translate("#GW-Growth_FullyGrown");
 		else
-			outName = string.Format("Growth: %1%%", gc.GetProgressPercent().ToString(-1, 0));
+			outName = WidgetManager.Translate("#GW-Growth_Percent", gc.GetProgressPercent().ToString(-1, 0));
 
 		return true;
 	}

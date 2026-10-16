@@ -4,12 +4,20 @@ GenericEntity {
   InventoryItemComponent "{6A6925CFA0B766F8}" {
    Attributes SCR_ItemAttributeCollection "{6A6925CFA4ADCFAF}" {
     ItemDisplayName UIInfo "{6A6925CF9EC8D064}" {
-     Name "Empty plant pot"
-     Description "A pot for your plants"
+     Name "#GW-Item_PotEmpty_Name"
+     Description "#GW-Item_PotEmpty_Desc"
     }
     ItemPhysAttributes ItemPhysicalAttributes "{6A6925CC46974137}" {
-     Weight 1
+     Weight 2
+     SizeSetupStrategy Volume
+     ItemVolume 2000
     }
+    CustomAttributes {
+     SCR_CharacterInventoryPreviewAttributes "{6A6CF740E4A3EBB1}" {
+      CameraDistanceToItem 0.5
+     }
+    }
+    CommonItemType "NONE"
     m_Size SLOT_2x2
     m_SlotType SLOT_BACKPACK
    }
@@ -19,22 +27,9 @@ GenericEntity {
   }
   RigidBody "{6A691790E0F45E59}" {
   }
-  SCR_EditableEntityComponent "{6A6A1D80F005EF2E}" {
-   m_EntityType ITEM
-   m_UIInfo SCR_UIInfo "{6A6A1D8132735CCA}" {
-    Name "Empty plant pot"
-    Description "An empty plant pot"
-   }
-   m_EntityInteraction SCR_EditableEntityInteraction "{6A6A1D80E756F994}" {
-   }
-   m_Flags PLACEABLE
-  }
   ActionsManagerComponent "{B3357E0809BCB835}" {
    ActionContexts {
     UserActionContext "{E6FCCA6B464A6A51}" {
-     UIInfo SCR_ActionUIInfo "{17B380D2C5E027A2}" {
-      Name "Empty Clay Pot"
-     }
      ContextName "PotContext"
      Position PointInfo "{5BFB43736FC814C4}" {
      }
@@ -46,18 +41,19 @@ GenericEntity {
       "PotContext"
      }
      UIInfo SCR_ActionUIInfo "{6669440EDD3FC168}" {
-      Name "Fill with Dirt"
+      Name "#GW-Action_FillWithDirt"
      }
      Duration 3
      m_iAnimMode 1
      m_rFilledPotPrefab "{68836758A4615C2D}Prefabs/Items/GW_PotItem_Filled.et"
     }
-    GW_PickUpAction "{57C95A1B95E4E9B8}" {
+    SCR_PickUpItemAction "{6A70D4DE8F85DD62}" {
      ParentContextList {
       "PotContext"
      }
-     UIInfo SCR_ActionUIInfo "{CB0D62D4ECD43A48}" {
-      Name "Pick Up Pot"
+     UIInfo SCR_ActionContextUIInfo "{6A70D4DF6DE01F1D}" {
+      Name "#AR-Inventory_PickUp"
+      m_sIconName "pick-up"
      }
     }
    }
