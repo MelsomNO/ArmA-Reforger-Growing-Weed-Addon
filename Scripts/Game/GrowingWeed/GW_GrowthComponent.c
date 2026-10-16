@@ -5,8 +5,11 @@ class GW_GrowthComponentClass : ScriptComponentClass
 
 class GW_GrowthComponent : ScriptComponent
 {
-	[Attribute(defvalue: "6.0", desc: "In-game hours until this stage advances to the next.", category: "Growth")]
+	[Attribute(defvalue: "6.0", desc: "In-game hours until this stage advances to the next. Servers can override this via GrowthConfig.json.", category: "Growth")]
 	protected float m_fGrowInGameHours;
+
+	[Attribute(defvalue: "0", desc: "Which stage this is in the server growth config (1 = seedling, 2 = young plant). 0 = only the speed multiplier applies.", category: "Growth")]
+	protected int m_iConfigStage;
 
 	[Attribute("", UIWidgets.ResourceNamePicker, desc: "Prefab spawned when this stage completes. Leave empty for a terminal (harvestable) stage.", params: "et", category: "Growth")]
 	protected ResourceName m_rNextStagePrefab;
@@ -18,6 +21,10 @@ class GW_GrowthComponent : ScriptComponent
 	protected float m_fLastAbsoluteHour = -1;
 	protected bool m_bTicking;
 
+	//! Grow hours after the server config is applied; replicated so clients show the right progress. < 0 until the server sets it.
+	[RplProp()]
+	protected float m_fConfiguredGrowHours = -1;
+
 	override void OnPostInit(IEntity owner)
 	{
 		SetEventMask(owner, EntityEvent.INIT);
@@ -25,6 +32,12 @@ class GW_GrowthComponent : ScriptComponent
 
 	override void EOnInit(IEntity owner)
 	{
+		if (Replication.IsServer())
+		{
+			m_fConfiguredGrowHours = GW_GrowthConfig.Get().GetStageHours(m_iConfigStage, m_fGrowInGameHours);
+			Replication.BumpMe();
+		}
+
 		// Delay start slightly so world + time manager are fully up.
 		GetGame().GetCallqueue().CallLater(this.StartTicking, 500, false, owner);
 	}
@@ -45,6 +58,8 @@ class GW_GrowthComponent : ScriptComponent
 	{
 		if (!owner)
 			return;
+
+		float growHours = GetGrowHours();
 
 		float absHour = GetAbsoluteWorldHour();
 		if (absHour < 0)
@@ -71,9 +86,9 @@ class GW_GrowthComponent : ScriptComponent
 		m_fElapsedInGameHours += delta;
 
 		if (m_bDebugLogs)
-			Print(string.Format("[GW_GrowthComponent] +%1h -> elapsed %2 / %3", delta, m_fElapsedInGameHours, m_fGrowInGameHours));
+			Print(string.Format("[GW_GrowthComponent] +%1h -> elapsed %2 / %3", delta, m_fElapsedInGameHours, growHours));
 
-		if (m_fElapsedInGameHours >= m_fGrowInGameHours && m_fGrowInGameHours > 0)
+		if (m_fElapsedInGameHours >= growHours && growHours > 0)
 			Advance(owner);
 	}
 
@@ -128,15 +143,24 @@ class GW_GrowthComponent : ScriptComponent
 		}
 	}
 
+	//! Hours this stage takes, with the server config applied once it has replicated.
+	float GetGrowHours()
+	{
+		if (m_fConfiguredGrowHours < 0)
+			return m_fGrowInGameHours;
+		return m_fConfiguredGrowHours;
+	}
+
 	float GetProgressPercent()
 	{
-		if (m_fGrowInGameHours <= 0)
+		float growHours = GetGrowHours();
+		if (growHours <= 0)
 			return 100.0;
-		return Math.Clamp((m_fElapsedInGameHours / m_fGrowInGameHours) * 100.0, 0.0, 100.0);
+		return Math.Clamp((m_fElapsedInGameHours / growHours) * 100.0, 0.0, 100.0);
 	}
 
 	float GetRemainingInGameHours()
 	{
-		return Math.Max(0.0, m_fGrowInGameHours - m_fElapsedInGameHours);
+		return Math.Max(0.0, GetGrowHours() - m_fElapsedInGameHours);
 	}
 }

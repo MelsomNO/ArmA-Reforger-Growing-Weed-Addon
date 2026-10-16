@@ -3,6 +3,7 @@ GenericEntity {
  components {
   GW_GrowthComponent "{E92CE1C7990BAECD}" {
    m_fGrowInGameHours 8
+   m_iConfigStage 2
    m_rNextStagePrefab "{890AE00D20728B22}Prefabs/Plants/GW_WeedPlant_Sativa_Stage3.et"
    m_bDebugLogs 0
   }
