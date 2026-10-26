@@ -12,6 +12,7 @@ A self-contained cannabis growing system for Arma Reforger. Plant seeds, tend th
 - **Uproot with shovel** — Any stage can be removed with the shovel demolition animation; the plant is destroyed.
 - **Shovel-gated actions** — Filling the pot and planting seeds require an entrenching-tool-type item in hands (default patterns match the vanilla US ETool and Soviet MPL50). Configurable per prefab if you use a shovel mod with different naming.
 - **Bud visuals on mature plants** — Stage 3 plants have 14 scattered buds hanging from branches, visually distinct from the vegetative stage so players can tell at a glance when a plant is ready.
+- **Plants sway in the wind** — Leaves and stems use the same foliage shader as vanilla bushes and flowerpots, so they bend with the world's wind and keep a gentle idle sway when it's calm.
 - **Available in every arsenal** — Empty pots, both seed packs, and both cannabis top items are pre-wired into the USSR, US, FIA, and CIV faction entity catalogs, so players can pull them from any vanilla arsenal without extra setup.
 
 ## How to play
@@ -33,6 +34,7 @@ Everything is exposed as prefab attributes — no code edits needed:
 - **Harvest yield range** — `m_iYieldMin` / `m_iYieldMax` on the Stage 3 prefab's `GW_HarvestAction` (defaults: 2–4).
 - **Species-specific yields** — `m_rYieldPrefab` on each Stage 3 `GW_HarvestAction` points to the matching `GW_CannabisTop_*` item.
 - **Shovel matching** — `m_sShovelNamePatterns` on plant/uproot/fill actions; semicolon-separated substring list (default `shovel;etool;entrench;spade`).
+- **Wind sway** — set in the plant materials under `Models/Plants/Data/` (`Weed.emat` for leaves, `Stem.emat` and `BabySprout.emat` for stems). `WindStiffness` controls how much the wind bends the plant; `WindLocalBranchLength` (0–0.3) and `WindLocalBranchSpeed` control the idle sway that runs even without wind.
 - **Action durations** — `Duration` on each user action (defaults: 3 s for shovel actions, 2 s for harvest).
 
 ## Server configuration
