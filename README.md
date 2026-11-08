@@ -59,9 +59,11 @@ The defaults match the shipped prefabs, so an untouched file changes nothing. Va
 
 ## Dependencies
 
-- **Arma Reforger Data** (base game).
+- **Arma Reforger Data** (base game), version **1.9 or later**.
 
 Fully self-contained — no other mods required.
+
+1.9 renamed the loiter-item enum the smoking emote relies on (`SCR_ELoiterItemID` → `SCR_EAnimationItemID`) and moved its preset field to `m_eItemPresetID`. The current mod version is built against those names, so it will not compile on older game versions.
 
 ## Credits
 
