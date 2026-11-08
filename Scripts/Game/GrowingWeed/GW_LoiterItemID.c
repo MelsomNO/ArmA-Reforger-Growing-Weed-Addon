@@ -5,17 +5,17 @@
 //
 //   * Configs/Character/LoiterItemPresets.conf ({911269C6C40E808B}) deserialises into
 //     SCR_LoiterItemPresets, whose constructor indexes its m_aLoiterItemsData array into a
-//     map<SCR_ELoiterItemID, SCR_LoiterItemDataBase> keyed on each entry's GetId().
+//     map<SCR_EAnimationItemID, SCR_LoiterItemDataBase> keyed on each entry's GetId().
 //   * SCR_LoiterItemPresets.GetData(id) is the only read path into that map.
 //   * SCR_CharacterCommandLoiter.OnActivate calls m_customAnimData.SpawnItem(m_pCharacter), and
 //     the matching OnDeactivate calls m_customAnimData.DeleteItem(). The preset an emote asks for
-//     is SCR_LoiterCustomAnimData.m_eLoiterItemPreset.
+//     is SCR_LoiterCustomAnimData.m_eItemPresetID (declared on its base, SCR_CustomAnimData_Properties).
 //
 // So overriding GetData is enough to add an entry without touching the config: vanilla ids still
 // resolve through super, and GW_JOINT resolves to the data built here.
 
 // Appends to the enum, leaving vanilla's NONE / CIGAR / CHAIR / TEST_EXAMPLE untouched.
-modded enum SCR_ELoiterItemID
+modded enum SCR_EAnimationItemID
 {
 	GW_JOINT,
 }
@@ -48,7 +48,7 @@ class GW_JointLoiterItemData : SCR_LoiterItemData
 
 	void GW_JointLoiterItemData()
 	{
-		m_eID = SCR_ELoiterItemID.GW_JOINT;
+		m_eID = SCR_EAnimationItemID.GW_JOINT;
 		m_sItemPrefab = "{6A9C40C012000000}Prefabs/Props/GW_AnimationProp_Joint.et";
 		m_sBoneName = BONE_NAME;
 		m_vPositionOffsetLS = POSITION_OFFSET_LS;
@@ -66,9 +66,9 @@ modded class SCR_LoiterItemPresets
 {
 	protected ref GW_JointLoiterItemData m_GwJointData;
 
-	override SCR_LoiterItemDataBase GetData(SCR_ELoiterItemID id)
+	override SCR_LoiterItemDataBase GetData(SCR_EAnimationItemID id)
 	{
-		if (id != SCR_ELoiterItemID.GW_JOINT)
+		if (id != SCR_EAnimationItemID.GW_JOINT)
 			return super.GetData(id);
 
 		if (!m_GwJointData)

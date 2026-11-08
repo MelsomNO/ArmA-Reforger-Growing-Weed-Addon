@@ -5,7 +5,7 @@
 //
 //   SCR_ContinuousLoiterCommand { m_sCommandName "Emote_Smoke"  m_eLoiterType SMOKING
 //                                m_aAllowedStances { STAND }
-//                                m_CustomAnimationData { m_eLoiterItemPreset CIGAR } }
+//                                m_CustomAnimationData { m_iCommandValue 4  m_eItemPresetID CIGAR } }
 //
 // That command is the only thing in the game that plays ELoiteringType.SMOKING, and the only thing
 // that carries the item preset which spawns the prop (the CIGAR entry of
